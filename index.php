@@ -19,7 +19,9 @@
     <h1>Pizzeria Fortuna</h1>
   </div>
   <div>
-    <button type="button" class="btn btn-secondary">Place Order</button>
+    <form action="php/order_page.php" method="POST">
+      <button type="submit" class="btn btn-secondary">Place Order</button>
+    </form>
   </div>
   <div>
     <h2>Our Story</h2>
