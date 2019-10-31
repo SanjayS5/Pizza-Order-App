@@ -15,14 +15,13 @@
 <body>
 
 <div class="container">
-
-<?php include "php_components/check_ingredients.php" ?>
-
   <div class="page-header">
     <h1>Pizzeria Fortuna</h1>
   </div>
   <div>
-    <button type="submit" class="btn btn-secondary" action="php_components/check_ingredients.php">Place Order</button>
+    <form action="php/order_page.php" method="POST">
+      <button type="submit" class="btn btn-secondary">Place Order</button>
+    </form>
   </div>
   <div>
     <h2>Our Story</h2>

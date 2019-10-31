@@ -1,12 +1,3 @@
-
-  <?php
-  if(isset($_REQUEST['name'])) {
-    $ingredient = $_REQUEST['name'];
-  } else
-  $ingredient = "";
-  ?>
-
-
 <?php
 $servername = "localhost";
 $username = "myuser";
@@ -18,7 +9,7 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 
 // Check connection
 if (!$conn) {
-     echo("Connection failed: " . mysqli_connect_error());
+    echo ("Connection failed: " . mysqli_connect_error());
 }
 
 $sql = 'SELECT * from ingredients';
@@ -27,19 +18,16 @@ $result = mysqli_query($conn, $sql);
 
 $ingredients = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-print_r($ingredients);
+// print_r($ingredients);
 
-echo "#####################################";
+// echo "#####################################";
 
 foreach ($result as $row) {
-    echo " ";
-    echo $row['name'];
-    echo " ";
-    echo $row['amount'];
-    if ($row['amount'] > 500) {
-        echo " Yeahhh";
-    }
+    // echo " ";
+    // echo $row['name'];
+    // echo " ";
+    // echo $row['amount'];
+    // if ($row['amount'] > 500) {
+    //     echo " Yeahhh";
+    // }
 }
-
-?>
-
