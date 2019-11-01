@@ -7,10 +7,10 @@ if (isset($_POST['submit'])) {
 
     $base = $_POST['base'];
     $toppings = implode(", ", $_POST['topping']);
-    
-    $order = "$toppings, "."$pizza";
+
+    $order = "$toppings, " . "$pizza";
     echo $order;
-} 
+}
 
 $servername = "localhost";
 $username = "myuser";
@@ -30,4 +30,4 @@ if ($pizza && $base && $toppings) {
     // $query->bind_param("iii", $newsets, $newreps, $id);
     // $query->execute();
     // $insertresult = $query->get_result();
-  }
+}
