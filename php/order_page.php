@@ -23,7 +23,7 @@
     include "../php_components/check_ingredients.php" ?>
     <div class="container">
        <h1>Place Order</h1>
-       <form action="test.php" method="POST">
+       <form action="../php_components/process_order.php" method="POST">
            <div class="container">
             <div>
                     <h2>Select Your Pizza</h2>
@@ -76,7 +76,7 @@
             </div>
             <div class="container">
                 <div>
-                    <h2>Select The Pizza Base</h2>
+                    <h2>Select Pizza Base</h2>
                 </div>
                 <div class="row justify-content-center">
                         <div class="card col-3" style="width: 18rem;">
@@ -113,7 +113,7 @@
                             </div>
                             <div class="card-body">
                                 <label for="toppingCheckbox">Tomatoes</label>
-                                <input type="checkbox" name="topping" id="toppingCheckbox" value="tomatoes">
+                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="tomatoes">
 
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                             </div>
                             <div class="card-body">
                                 <label for="toppingCheckbox">Onions</label>
-                                <input type="checkbox" name="topping" id="toppingCheckbox" value="onions">
+                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="onions">
 
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                             </div>
                             <div class="card-body">
                                 <label for="toppingCheckbox">Spinach</label>
-                                <input type="checkbox" name="topping" id="toppingCheckbox" value="spinach">
+                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="spinach"> 
                             </div>
                         </div>
                         <div class="card col-sm" style="width: 18rem; ">
@@ -142,7 +142,7 @@
                             </div>
                             <div class="card-body">
                                 <label for="toppingCheckbox">Capsicum</label>
-                                <input type="checkbox" name="topping" id="toppingCheckbox" value="capsicum">
+                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="capsicum">
                             </div>
                         </div>
                         <div class="card col-sm" style="width: 18rem; ">
@@ -151,7 +151,7 @@
                             </div>
                             <div class="card-body">
                                 <label for="toppingCheckbox">Basil</label>
-                                <input type="checkbox" name="topping" id="toppingCheckbox" value="basil">
+                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="basil">  
                             </div>
                         </div>
                         <div class="card col-sm" style="width: 18rem; ">
@@ -160,7 +160,7 @@
                             </div>
                             <div class="card-body">
                                 <label for="toppingCheckbox">Pineapple</label>
-                                <input type="checkbox" name="topping" id="toppingCheckbox" value="pineapple">
+                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="pineapple">                                
                             </div>
                         </div>
                         <div class="card col-sm" style="width: 18rem; ">
@@ -169,7 +169,7 @@
                             </div>
                             <div class="card-body">
                                 <label for="toppingCheckbox">Ham</label>
-                                <input type="checkbox" name="topping" id="toppingCheckbox" value="ham">
+                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="ham">          
                             </div>
                         </div>
                 </div>
