@@ -1,0 +1,13 @@
+.card{
+  margin: 0.4rem;
+}
+.card:hover{
+  box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+}
+.premade , .base{
+  height: 15rem;
+}
+.toppings{
+  height: 8rem;
+  padding: 0.8rem;
+}
