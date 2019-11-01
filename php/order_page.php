@@ -23,43 +23,131 @@
     <div class="container">
        <h1>Place Order</h1>
        <form action="test.php" method="POST">
-           <div class="row">
-                <div class="card col-sm" style="width: 18rem;">
-                    <img src="../assets/img/pizzaSample.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <label for="pizzaRadioBtn">Vegan Mozzarella</label>
-                        <input type="radio" name="pizza" id="pizzaRadioBtn" value="Vegan Mozzarella">
-                        
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
+           <div class="container">
+            <div>
+                    <h2>Select Your Pizza</h2>
                 </div>
-                <div class="card col-sm" style="width: 18rem;">
-                    <img src="../assets/img/pizzaSample2.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <label for="pizzaRadioBtn">Classic Vegan</label>
-                        <input type="radio" name="pizza" id="pizzaRadioBtn" value="Classic Vegan">
-                        
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="row">
+                    <div class="card col-sm" style="width: 18rem;">
+                        <img src="../assets/img/pizzaSample.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <label for="pizzaRadioBtn">Vegan Mozzarella</label>
+                            <input type="radio" name="pizza" id="pizzaRadioBtn" value="Vegan Mozzarella">
+                            
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card col-sm" style="width: 18rem;">
-                    <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <label for="pizzaRadioBtn">Vegetarian Delight</label>
-                        <input type="radio" name="pizza" id="pizzaRadioBtn" value="Vegetarian Delight">
-                        
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="card col-sm" style="width: 18rem;">
+                        <img src="../assets/img/pizzaSample2.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <label for="pizzaRadioBtn">Classic Vegan</label>
+                            <input type="radio" name="pizza" id="pizzaRadioBtn" value="Classic Vegan">
+                            
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card col-sm" style="width: 18rem;">
-                    <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <label for="pizzaRadioBtn">Make Your Own!</label>
-                        <input type="radio" name="pizza" id="pizzaRadioBtn" value="Custom Pizza">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="card col-sm" style="width: 18rem;">
+                        <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <label for="pizzaRadioBtn">Vegetarian Delight</label>
+                            <input type="radio" name="pizza" id="pizzaRadioBtn" value="Vegetarian Delight">
+                            
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card col-sm" style="width: 18rem;">
+                        <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <label for="pizzaRadioBtn">Make Your Own!</label>
+                            <input type="radio" name="pizza" id="pizzaRadioBtn" value="Custom Pizza">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="container">   
+                <div>
+                    <h2>Select The Pizza Base</h2>
+                </div>
+                <div class="row justify-content-center">
+                        <div class="card col-3" style="width: 18rem;">
+                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <label for="pizzaRadioBtn">Thin crust</label>
+                                <input type="radio" name="base" id="pizzaRadioBtn" value="Thin crust">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card col-3" style="width: 18rem;">
+                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <label for="pizzaRadioBtn">Thick crust</label>
+                                <input type="radio" name="base" id="pizzaRadioBtn" value="Thick crust">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div>
+                    <h2>Select Toppings</h2>
+                </div>
+                <div class="row">
+                        <div class="card col-sm" style="width: 18rem;">
+                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <label for="toppingCheckbox">Tomatoes</label>
+                                <input type="checkbox" name="topping" id="toppingCheckbox" value="tomatoes">
+                                
+                            </div>
+                        </div>  
+                        <div class="card col-sm" style="width: 18rem;">
+                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <label for="toppingCheckbox">Onions</label>
+                                <input type="checkbox" name="topping" id="toppingCheckbox" value="onions">
+                                
+                            </div>
+                        </div>  
+                        <div class="card col-sm" style="width: 18rem;">
+                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <label for="toppingCheckbox">Spinach</label>
+                                <input type="checkbox" name="topping" id="toppingCheckbox" value="spinach"> 
+                            </div>
+                        </div>
+                        <div class="card col-sm" style="width: 18rem;">
+                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <label for="toppingCheckbox">Capsicum</label>
+                                <input type="checkbox" name="topping" id="toppingCheckbox" value="capsicum">
+                            </div>
+                        </div>
+                        <div class="card col-sm" style="width: 18rem;">
+                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <label for="toppingCheckbox">Basil</label>
+                                <input type="checkbox" name="topping" id="toppingCheckbox" value="basil">  
+                            </div>
+                        </div>
+                        <div class="card col-sm" style="width: 18rem;">
+                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <label for="toppingCheckbox">Pineapple</label>
+                                <input type="checkbox" name="topping" id="toppingCheckbox" value="pineapple">                                
+                            </div>
+                        </div>
+                        <div class="card col-sm" style="width: 18rem;">
+                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <label for="toppingCheckbox">Ham</label>
+                                <input type="checkbox" name="topping" id="toppingCheckbox" value="ham">          
+                            </div>
+                        </div>            
+                </div>
+                <div class="row">
+            </div> 
             
             <input type="submit" name="submit" value="Place Order">
         </form>
