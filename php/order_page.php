@@ -35,7 +35,7 @@
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Vegan Mozzarella</label>
-                            <input type="radio" name="pizza" id="pizzaRadioBtn" value="Vegan Mozzarella">
+                            <input type="radio" name="pizza" id="pizzaRadioBtn" value="Vegan Mozzarella" required>
 
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="card-body">
                                 <label for="pizzaRadioBtn">Thin crust</label>
-                                <input type="radio" name="base" id="pizzaRadioBtn" value="Thin crust">
+                                <input type="radio" name="base" id="pizzaRadioBtn" value="Thin crust" required>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                         </div>
@@ -176,7 +176,68 @@
                 <div class="row">
             </div>
 
-            <input type="submit" name="submit" value="Place Order">
+            <!-- <input type="submit" name="submit" value="Place Order"> -->
+
+            <!-- PAYMENTS -->
+
+            <div>
+		<button class="btn btn-dark" onclick="document.getElementById('payment').style.display='block'"> Add Payment </button>
+		<tr> <td>&nbsp;</td> </tr>	
+		<style>
+			#payment{display:none; background:#efefef; border:1px solid black; width:100%; height:100%;}
+		</style>		
+		<div id="payment">			
+
+			<br /> <br /><br /><br /> 			
+			<table id="paymentTable" border='0' width='550px' cellpadding='0' cellspacing='0' align='center'>
+				<center>
+					<tr>
+						<td align="center"><h2>Add Payment Details<hr /></h2></td>						
+					</tr>			
+					<tr> <td>&nbsp;</td> </tr>					
+				</center>
+					<tr>
+					<center>	
+						<table border='0' width='250px' cellpadding='0' cellspacing='0' align='center'>
+							<tr>						
+								<td align='center'id="name_td"><strong>Name</strong></td>
+								<td><input type="text" id="name" name="name" placeholder="Enter name" required /></td>
+								
+							</tr>
+							<tr> <td>&nbsp;</td> </tr>
+							<tr>
+								<td align='center' id="email_td"><strong>Email </strong></td>
+								<td><input type="email" id="email" name="emailName" placeholder="Enter email" required  /></td>
+							</tr>
+							<tr> <td>&nbsp;</td> </tr>
+							<tr>
+								<td align='center' id="address_td"><strong>Address</strong></td>
+								<td><input type="text" id="address" name="addressName" placeholder="Enter address" required /></td>
+							</tr>
+							<tr> <td>&nbsp;</td> </tr>
+							<tr>
+								<td align='center' id="card_td"><strong>Card</strong></td>
+								<td><input type="text" id="card" name="card" pattern="[0-9.]+" placeholder="Enter payment card number" required /></td>
+							</tr>
+							<tr> <td>&nbsp;</td> </tr>					
+								<table border='0' cellpadding='0' cellspacing='0' width='450px' align='center'>
+                                <tr> <td>&nbsp;</td> </tr>
+                                
+                                
+					
+					<tr>
+						<td align='center'><input type='submit' name='submit' value="Place Order" ></td>
+					</tr>
+					<tr> <td>&nbsp;</td> </tr>	
+					</table>
+					</center>					
+		</table>
+	</table>
+	</div>
+    
+	</div>
+
+
         </form>
 
     </div>
