@@ -5,24 +5,21 @@ ini_set('display_errors', 1);
 if (isset($_POST['submit'])) {
     $pizza = $_POST['pizza'];
     print_r($_POST);
-    echo "You selected the $pizza";
 
     $toppingsArray = $_POST['topping'];
-    echo "TOPPINGS ARRAY : ";
-    foreach ($toppingsArray as $item) {
-        echo " $item";
+    $toppings = "";
+    foreach ($toppingsArray as $item => $value) {
+        $toppings .= "+$item,";
     }
 
     $base = $_POST['base'];
-    $toppings = implode(",+", $_POST['topping']);
-
-    $order = "$pizza," . "+$toppings" ;
-    echo " Your order: $order";
-    echo " Your base: $base";
-    $customerId = 33; // UPDATE LATER
+    $order = "$pizza," . "$toppings";
+    
+    $customerId = 33; // UPDATE LATER - include file to create 
+    // record, then add that id to the order
     $status = "waiting";
 
-    $amount = 20;
+    // $amount = 20;
 }
 
 $servername = "localhost";
@@ -50,9 +47,9 @@ if ($pizza && $base && $status && $toppings) {
 }
 
 if ($pizza && $base && $status && $toppings) {
-    foreach ($toppingsArray as $item) {
+    foreach ($toppingsArray as $item => $value) {
         if ($query = $conn->prepare("UPDATE ingredients set amount = amount - ? where `name` = '$item';")) {
-            $query->bind_param("i", $amount);
+            $query->bind_param("i", $value);
             $query->execute();
             $insertresult = $query->get_result();
         } else {

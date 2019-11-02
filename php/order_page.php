@@ -132,7 +132,7 @@
                                 <img src="../assets/img/tomato.png" class="card-img-top" alt="..." height="200px" width="100%">
                             </div>
                             <div class="card-body">
-                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="tomatoes">
+                                <input type="checkbox" name="topping[tomatoes]" id="toppingCheckbox" value="30">
                                 <label for="toppingCheckbox">Tomatoes</label>    
                             </div>
                         </div>
@@ -143,7 +143,7 @@
                                 <img src="../assets/img/onion.png" class="card-img-top" alt="..." height="200px" width="100%">
                             </div>
                             <div class="card-body">
-                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="onions">
+                                <input type="checkbox" name="topping[onions]" id="toppingCheckbox" value="20">
                                 <label for="toppingCheckbox">Onions</label>
                             </div>
                         </div>
