@@ -26,12 +26,15 @@
        <form action="../php_components/process_order.php" method="POST">
            <div class="container">
             <div>
+            <p class="my-3"></p>
                     <h2>Select Your Pizza</h2>
+                    <p class="my-3"></p>
                 </div>
             <div class="row">
-                    <div class="card col-sm" style="width: 18rem;">
-                        <div class="row premade">
-                            <img src="../assets/img/pizzaSample.jpeg" class="card-img-top" alt="...">
+                    <div class="col-lg-3  p-0">
+                    <div class="card">
+                        <div class="premade">
+                            <img src="../assets/img/pizzaSample.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Vegan Mozzarella</label>
@@ -40,9 +43,11 @@
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
-                    <div class="card col-sm" style="width: 18rem;">
-                        <div class="row premade">
-                              <img src="../assets/img/pizzaSample2.jpeg" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col-lg-3 p-0">
+                    <div class="card" >
+                        <div class="premade">
+                              <img src="../assets/img/pizzaSample2.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Classic Vegan</label>
@@ -51,9 +56,11 @@
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
-                    <div class="card col-sm" style="width: 18rem;">
-                        <div class="row premade">
-                          <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col-lg-3 p-0">
+                    <div class="card" >
+                        <div class="premade">
+                          <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Vegetarian Delight</label>
@@ -62,9 +69,12 @@
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
-                    <div class="card col-sm" style="width: 18rem;">
-                        <div class="row premade">
-                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                    </div>
+
+                    <div class="col-lg-3 p-0">
+                    <div class="card" >
+                        <div class="premade">
+                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Make Your Own!</label>
@@ -72,16 +82,20 @@
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
             <div class="container">
                 <div>
+                    <p class="my-3"></p>
                     <h2>Select Pizza Base</h2>
+                    <p class="my-3"></p>
                 </div>
-                <div class="row justify-content-center">
-                        <div class="card col-3" style="width: 18rem;">
-                            <div class="row base">
-                                <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                <div class="row">
+                <div class="col-lg-3 p-0">
+                        <div class="card">
+                            <div class="base">
+                                <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
                             </div>
                             <div class="card-body">
                                 <label for="pizzaRadioBtn">Thin crust</label>
@@ -89,9 +103,11 @@
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                         </div>
-                        <div class="card col-3" style="width: 18rem;">
-                            <div class="row base">
-                                <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="col-lg-3 p-0">
+                        <div class="card">
+                            <div class="base">
+                                <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
                             </div>
                             <div class="card-body">
                                 <label for="pizzaRadioBtn">Thick crust</label>
@@ -99,82 +115,97 @@
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div>
+                <p class="my-3"></p>
                     <h2>Select Toppings</h2>
+                    <p class="my-3"></p>
                 </div>
                 <div class="row">
-                        <div class="card col-sm" style="width: 18rem;  ">
-                            <div class="row toppings">
-                                <img src="../assets/img/tomato.png" class="card-img-top" alt="..." >
+                <div class="col-lg-3 p-0">
+                        <div class="card">
+                            <div class="toppings">
+                                <img src="../assets/img/tomato.png" class="card-img-top" alt="..." height="200px" width="100%">
                             </div>
                             <div class="card-body">
-                                <label for="toppingCheckbox">Tomatoes</label>
                                 <input type="checkbox" name="topping[]" id="toppingCheckbox" value="tomatoes">
-
+                                <label for="toppingCheckbox">Tomatoes</label>    
                             </div>
                         </div>
-                        <div class="card col-sm" style="width: 18rem; ">
-                            <div class="row toppings">
-                                <img src="../assets/img/onion.png" class="card-img-top" alt="..." >
+                        </div>
+                        <div class="col-lg-3 p-0">
+                        <div class="card">
+                            <div class="toppings">
+                                <img src="../assets/img/onion.png" class="card-img-top" alt="..." height="200px" width="100%">
                             </div>
                             <div class="card-body">
-                                <label for="toppingCheckbox">Onions</label>
                                 <input type="checkbox" name="topping[]" id="toppingCheckbox" value="onions">
-
+                                <label for="toppingCheckbox">Onions</label>
                             </div>
                         </div>
-                        <div class="card col-sm" style="width: 18rem; ">
-                            <div class="row toppings">
-                                <img src="../assets/img/spinach.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="col-lg-3 p-0">
+                        <div class="card">
+                            <div class="toppings">
+                                <img src="../assets/img/spinach.png" class="card-img-top" alt="..." height="200px" width="100%">
                             </div>
                             <div class="card-body">
-                                <label for="toppingCheckbox">Spinach</label>
                                 <input type="checkbox" name="topping[]" id="toppingCheckbox" value="spinach"> 
+                                <label for="toppingCheckbox">Spinach</label> 
                             </div>
                         </div>
-                        <div class="card col-sm" style="width: 18rem; ">
-                            <div class="row toppings">
-                                <img src="../assets/img/capsicum.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="col-lg-3 p-0">
+                        <div class="card">
+                            <div class="toppings">
+                                <img src="../assets/img/capsicum.png" class="card-img-top" alt="..." height="200px" width="100%">
                             </div>
                             <div class="card-body">
-                                <label for="toppingCheckbox">Capsicum</label>
                                 <input type="checkbox" name="topping[]" id="toppingCheckbox" value="capsicum">
+                                <label for="toppingCheckbox">Capsicum</label>
                             </div>
                         </div>
-                        <div class="card col-sm" style="width: 18rem; ">
-                            <div class="row toppings">
-                                <img src="../assets/img/basil.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="col-lg-3 p-0">
+                        <div class="card">
+                            <div class="toppings">
+                                <img src="../assets/img/basil.png" class="card-img-top" alt="..." height="200px" width="100%">
                             </div>
                             <div class="card-body">
-                                <label for="toppingCheckbox">Basil</label>
-                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="basil">  
+                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="basil">
+                                <label for="toppingCheckbox">Basil</label>     
                             </div>
                         </div>
-                        <div class="card col-sm" style="width: 18rem; ">
-                            <div class="row toppings">
-                                <img src="../assets/img/pineapple.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="col-lg-3 p-0">
+                        <div class="card">
+                            <div class="toppings">
+                                <img src="../assets/img/pineapple.png" class="card-img-top" alt="..." height="200px" width="100%">
                             </div>
                             <div class="card-body">
-                                <label for="toppingCheckbox">Pineapple</label>
-                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="pineapple">                                
+                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="pineapple"> 
+                                <label for="toppingCheckbox">Pineapple</label>                              
                             </div>
                         </div>
-                        <div class="card col-sm" style="width: 18rem; ">
-                            <div class="row toppings">
-                                  <img src="../assets/img/ham.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="col-lg-3 p-0">
+                        <div class="card">
+                            <div class="toppings">
+                                  <img src="../assets/img/ham.png" class="card-img-top" alt="..." height="200px" width="100%">
                             </div>
                             <div class="card-body">
-                                <label for="toppingCheckbox">Ham</label>
-                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="ham">          
+                                <input type="checkbox" name="topping[]" id="toppingCheckbox" value="ham">    
+                                <label for="toppingCheckbox">Ham</label>  
                             </div>
+                        </div>
                         </div>
                 </div>
-                <div class="row">
-            </div>
+                <!-- <div class="row">
+            </div> -->
 
             <!-- <input type="submit" name="submit" value="Place Order"> -->
 
