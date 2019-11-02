@@ -14,15 +14,15 @@ if (isset($_POST['submit'])) {
     }
 
     $base = $_POST['base'];
-    $toppings = implode(", ", $_POST['topping']);
+    $toppings = implode(",+", $_POST['topping']);
 
-    $order = "$toppings, " . "$pizza";
+    $order = "$pizza," . "+$toppings" ;
     echo " Your order: $order";
     echo " Your base: $base";
     $customerId = 33; // UPDATE LATER
     $status = "waiting";
 
-    $amount = 200;
+    $amount = 20;
 }
 
 $servername = "localhost";
