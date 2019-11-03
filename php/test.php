@@ -4,6 +4,13 @@ if (isset($_POST['submit'])) {
     $pizza = $_POST['pizza'];
     print_r($_POST);
     echo "You selected the $pizza";
-} else {
-    echo "You did not select a pizza";
+
+    if (!empty($_POST['topping'])) {
+        foreach ($_POST['topping'] as $topping) {
+            echo "$topping ";
+        }
+    }
+
 }
+
+
