@@ -5,10 +5,18 @@ let orders = [];
 
 const addToOrder = (e) => {
 
-    const pizzaVal = document.getElementById('pizzaRadioBtn').value;
+    // if (document.getElementById('selectPizza').checked) {
+    //     const pizzaVal = document.getElementById('selectPizza').value;
+    // }
+    // const pizzaVal = document.getElementById('pizzaRadioBtn').value;
+    const pizzaVal = document.querySelector('input[name="pizza"]:checked').value;
     console.log(pizzaVal);
 
-    const baseVal = document.getElementById('baseRadioBtn').value;
+    // if (document.getElementById('selectBase').checked) {
+    //     const baseVal = document.getElementById('selectBase').value;
+    // }
+    // const baseVal = document.getElementById('baseRadioBtn').value;
+    const baseVal = document.querySelector('input[name="base"]:checked').value;
     console.log(baseVal);
 
     const toppings = document.getElementsByName('topping');

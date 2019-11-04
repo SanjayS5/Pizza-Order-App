@@ -32,7 +32,7 @@
                 <h2>Select Your Pizza</h2>
                 <p class="my-3"></p>
             </div>
-            <div class="row">
+            <div class="row" id="selectPizza">
                 <div class="col-lg-3  p-0">
                     <div class="card">
                         <div class="premade">
@@ -93,7 +93,7 @@
                 <h2>Select Pizza Base</h2>
                 <p class="my-3"></p>
             </div>
-            <div class="row">
+            <div class="row" id="selectBase">
                 <div class="col-lg-3 p-0">
                     <div class="card">
                         <div class="base">
