@@ -1,5 +1,9 @@
 <?php
 
+//create customer first
+//create order
+//pass customer id to order
+
 if (isset($_POST['orders'])) {
     print_r($_POST);
     echo "complete";
@@ -32,7 +36,7 @@ if (isset($_POST['orders'])) {
             $newOrder .= "$pizza, $toppings";
             updateIngredients($toppingsArray);
         }
-        insertOrder($newOrder, $base, $status, $customerId);
+        insertOrder($newOrder, $base, $status, getCustomerId());
         insertCustomer($name, $address, $memberId);
     } else {
         echo json_last_error_msg();
@@ -103,12 +107,8 @@ function updateIngredients($toppingsArray)
     }
 }
 
-
 function insertCustomer($name, $address, $memberId)
 {
-    echo "InsertCUSTOMER SAYS";
-    echo " $name, $address, $memberId ";
-
     $servername = "localhost";
     $username = "myuser";
     $password = "mypass";
@@ -134,3 +134,24 @@ function insertCustomer($name, $address, $memberId)
         echo "FAIL insert";
     }
 }
+
+
+
+function getCustomerId() {
+    $servername = "localhost";
+    $username = "myuser";
+    $password = "mypass";
+    $database = "pizzadb";
+
+// Create connection
+    $conn = mysqli_connect($servername, $username, $password, $database);
+    $query= $conn->prepare("Select id from customers;");
+    $query->execute();
+    $cresult = $query->get_result();
+    $customerId=mysqli_num_rows($cresult);
+    echo "Customer id is $customerId";
+    $customerId++;
+    echo "New customer id is $customerId";
+    return $customerId;
+}
+     
