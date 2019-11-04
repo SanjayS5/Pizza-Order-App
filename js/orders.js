@@ -72,6 +72,7 @@ const addDetailsToOrder = () => {
          element.name = name;
          element.email = email;
          element.address = address;
+         element.memberId = 0;
      })
 
      console.log("LOGGING ADDED PROPS");
