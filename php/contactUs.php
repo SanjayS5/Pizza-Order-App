@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+  if(isset($__SESSION['uname'])){
+   $printName=$_SESSION['uname'];
+  }  
+?>
 <html>
 <head>
 <title>Contact Us</title>
@@ -26,12 +32,22 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item active">
-          <a class="nav-link" href="login.php">Login</a>          
-      </li>
-      <li class="nav-item active">
+	<?php if (isset($_SESSION['uname'])) { ?>
+     <li class="nav-link active"> Hi <?=$_SESSION['uname']?></li>
+    <li class="nav-item active">
+       <form method='post' action='php_components/logOutDataSource.php' >
+		      	<button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn place-order bg-dark">Logout</button>
+		  </form>	
+    </li>   
+     
+	<?php } else { ?>
+	  <li class="nav-item active">
+          <a class="nav-link" href="login.php">Login</a>  
+	  </li>
+	  <li class="nav-item active">
       <a class="nav-link" href="signUp.php">Register</a>
       </li>
+	  <?php } ?>
         </ul>
   </div>
   </nav>
@@ -48,7 +64,7 @@
 		<h2>Please enter your details </h2> &emsp;&emsp;
 		
 		<form action="contactDataSource.php" method="post">
-			<table>				
+			<table>					
 				<tr>
 					<td><label for="mail">E-mail   	</label></td>
 					<td><input type="email" id="mail" name="user_mail"></td>

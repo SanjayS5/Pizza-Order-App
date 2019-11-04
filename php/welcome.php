@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <?php
   session_start();
- $_SESSION['uname'];
+  if(isset($__SESSION['uname'])){
+   $printName=$_SESSION['uname'];
+  }
 ?>
 <html>
 <head>
@@ -20,16 +22,32 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="order_page.php">Order</a>
+        <a class="nav-link" href="php/order_page.php">Order</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="contactUs.php">Contact Us</a>
+        <a class="nav-link" href="php/contactUs.php">Contact Us</a>
       </li>
     </ul>
-    
+    <ul class="nav navbar-nav navbar-right">
+	<?php if (isset($_SESSION['uname'])) { ?>
+     <li class="nav-link active"> Hi <?=$_SESSION['uname']?></li>
+    <li class="nav-item active">
+       <form method='post' action='php_components/logOutDataSource.php' >
+		      	<button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn place-order bg-dark">Logout</button>
+		  </form>	
+    </li>     
+	<?php } else { ?>
+	  <li class="nav-item active">
+          <a class="nav-link" href="php/login.php">Login</a>  
+	  </li>
+	  <li class="nav-item active">
+      <a class="nav-link" href="php/signUp.php">Register</a>
+      </li>
+	  <?php } ?>
+        </ul>
   </div>
 </nav>
 </header>
