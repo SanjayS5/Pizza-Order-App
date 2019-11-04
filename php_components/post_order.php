@@ -10,8 +10,15 @@ if (isset($_POST['orders'])) {
         $base = "";
         $status = "waiting";
         $customerId = 33;
+        $name = "";
+        $email = "";
+        $address = "";
+        $memberId = 0;
         foreach ($order as $item => $value) {
-
+            $name .= $value['name'];
+            $email .= $value['email'];
+            $address .= $value['address'];
+            // $memberId .= $value['memberId'];
             $pizza = $value['pizza'];
             $baseVal = $value['base'];
             $base .= "$baseVal,";
@@ -26,6 +33,7 @@ if (isset($_POST['orders'])) {
             updateIngredients($toppingsArray);
         }
         insertOrder($newOrder, $base, $status, $customerId);
+        insertCustomer($name, $address, $memberId);
     } else {
         echo json_last_error_msg();
     }
@@ -62,12 +70,6 @@ function insertOrder($newOrder, $base, $status, $customerId)
     }
 }
 
-foreach ($toppingsArray as $array) {
-    foreach ($array as $topping => $amount) {
-        $toppings .= "+$topping,";
-    }
-}
-
 function updateIngredients($toppingsArray)
 {
 
@@ -101,3 +103,34 @@ function updateIngredients($toppingsArray)
     }
 }
 
+
+function insertCustomer($name, $address, $memberId)
+{
+    echo "InsertCUSTOMER SAYS";
+    echo " $name, $address, $memberId ";
+
+    $servername = "localhost";
+    $username = "myuser";
+    $password = "mypass";
+    $database = "pizzadb";
+
+// Create connection
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+// Check connection
+    if (!$conn) {
+        echo ("Connection failed: " . mysqli_connect_error());
+    }
+    if ($name && $address) {
+        if ($query = $conn->prepare("INSERT INTO customers(`name`, `address`, memberId) VALUES(?, ?, ?);")) {
+            $query->bind_param("ssi", $name, $address, $memberId);
+            $query->execute();
+            $insertresult = $query->get_result();
+        } else {
+            $error = $conn->errno . ' ' . $conn->error;
+            echo $error;
+        }
+    } else {
+        echo "FAIL insert";
+    }
+}
