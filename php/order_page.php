@@ -214,9 +214,10 @@
         <!-- PAYMENTS -->
         <div>
             <button class="btn btn-dark" id="addOrderBtn">Add to Order</button>
-            <button class="btn btn-dark" id="confirmOrderBtn" onclick="document.getElementById('payment').style.display='block'"> Next </button>
+            <button class="btn btn-dark" id="confirmOrderBtn"> Next </button>
         </div>
         <div id="display">
+        <h3>Order Details</h3>
             <ul id="orderList"></ul>
         </div>
         <div>
