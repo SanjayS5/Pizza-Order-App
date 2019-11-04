@@ -101,7 +101,7 @@
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Thin crust</label>
-                            <input type="radio" name="base" id="pizzaRadioBtn" value="Thin crust" required>
+                            <input type="radio" name="base" id="baseRadioBtn" value="Thin crust" required>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Thick crust</label>
-                            <input type="radio" name="base" id="pizzaRadioBtn" value="Thick crust">
+                            <input type="radio" name="base" id="baseRadioBtn" value="Thick crust">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                         <img src="../assets/img/tomato.png" class="card-img-top" alt="..." height="200px" width="100%">
                     </div>
                     <div class="card-body">
-                        <input type="checkbox" name="topping[tomatoes]" id="toppingCheckbox" value="30">
+                        <input type="checkbox" class="topping" name="topping" id="toppingCheckbox" value="tomatoes">
                         <label for="toppingCheckbox">Tomatoes</label>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                         <img src="../assets/img/onion.png" class="card-img-top" alt="..." height="200px" width="100%">
                     </div>
                     <div class="card-body">
-                        <input type="checkbox" name="topping[onions]" id="toppingCheckbox" value="20">
+                        <input type="checkbox" class="topping" name="topping" id="toppingCheckbox" value="onions">
                         <label for="toppingCheckbox">Onions</label>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                         <img src="../assets/img/spinach.png" class="card-img-top" alt="..." height="200px" width="100%">
                     </div>
                     <div class="card-body">
-                        <input type="checkbox" name="topping[spinach]" id="toppingCheckbox" value="50">
+                        <input type="checkbox" class="topping" name="topping" id="toppingCheckbox" value="spinach">
                         <label for="toppingCheckbox">Spinach</label>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
                         <img src="../assets/img/capsicum.png" class="card-img-top" alt="..." height="200px" width="100%">
                     </div>
                     <div class="card-body">
-                        <input type="checkbox" name="topping[capsicum]" id="toppingCheckbox" value="30">
+                        <input type="checkbox" class="topping" name="topping" id="toppingCheckbox" value="capsicum">
                         <label for="toppingCheckbox">Capsicum</label>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                         <img src="../assets/img/basil.png" class="card-img-top" alt="..." height="200px" width="100%">
                     </div>
                     <div class="card-body">
-                        <input type="checkbox" name="topping[basil]" id="toppingCheckbox" value="40">
+                        <input type="checkbox" class="topping" name="topping" id="toppingCheckbox" value="basil">
                         <label for="toppingCheckbox">Basil</label>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                         <img src="../assets/img/pineapple.png" class="card-img-top" alt="..." height="200px" width="100%">
                     </div>
                     <div class="card-body">
-                        <input type="checkbox" name="topping[pineapple]" id="toppingCheckbox" value="20">
+                        <input type="checkbox" class="topping" name="topping" id="toppingCheckbox" value="pineapple">
                         <label for="toppingCheckbox">Pineapple</label>
                     </div>
                 </div>
@@ -200,7 +200,7 @@
                         <img src="../assets/img/ham.png" class="card-img-top" alt="..." height="200px" width="100%">
                     </div>
                     <div class="card-body">
-                        <input type="checkbox" name="topping[ham]" id="toppingCheckbox" value="100">
+                        <input type="checkbox" class="topping" name="topping" id="toppingCheckbox" value="ham">
                         <label for="toppingCheckbox">Ham</label>
                     </div>
                 </div>
@@ -212,9 +212,13 @@
         <!-- <input type="submit" name="submit" value="Place Order"> -->
 
         <!-- PAYMENTS -->
-
         <div>
-            <button class="btn btn-dark" onclick="document.getElementById('payment').style.display='block'"> Add Payment </button>
+            <button class="btn btn-dark" id="addOrderBtn">Add To Order</button>
+            <button class="btn btn-dark" id="confirmOrderBtn" onclick="document.getElementById('payment').style.display='block'"> Confirm Order</button>
+        </div>
+        <div id="display"></div>
+        <div>
+            
             <tr>
                 <td>&nbsp;</td>
             </tr>
@@ -266,7 +270,7 @@
                                         <strong>Email </strong>
                                     </td>
                                     <td>
-                                        <input type="email" id="email" name="emailName" placeholder="Enter email" required />
+                                        <input type="email" id="email" name="email" placeholder="Enter email" required />
                                     </td>
                                 </tr>
                                 <tr>
@@ -277,7 +281,7 @@
                                         <strong>Address</strong>
                                     </td>
                                     <td>
-                                        <input type="text" id="address" name="addressName" placeholder="Enter address" required
+                                        <input type="text" id="address" name="address" placeholder="Enter address" required
                                         />
                                     </td>
                                 </tr>
@@ -305,7 +309,7 @@
 
                                     <tr>
                                         <td align='center'>
-                                            <input type='submit' name='submit' value="Place Order">
+                                            <button class="btn btn-dark" id="submitOrderBtn">Confirm Payment</button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -323,6 +327,8 @@
         </form>
 
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/orders.js"></script>
 </body>
 
 </html>
