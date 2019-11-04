@@ -33,12 +33,16 @@ if (isset($_POST['orders'])) {
     $order = json_decode($_POST['orders'], true);
     if (json_last_error() == JSON_ERROR_NONE) {
         echo "order var";
+        $newOrder = "";
+        $base = "";
+        $status = "waiting";
+        $customerId = 33;
         foreach ($order as $item => $value) {
-            $status = "waiting";
-            $customerId = 33;
+
             $pizza = $value['pizza'];
             echo "PIZZA: $pizza";
-            $base = $value['base'];
+            $baseVal = $value['base'];
+            $base .= "$baseVal,";
             echo "BASE: $base";
             $toppings = "";
             $toppingsArray = $value['topping'];
@@ -47,14 +51,14 @@ if (isset($_POST['orders'])) {
                     $toppings .= "+$topping,";
                 }
             }
-            $newOrder = "$pizza, $toppings";
+            $newOrder .= "$pizza, $toppings";
             echo "NEW ORDER: $newOrder";
             // echo "TOPPINGS: $toppings";
-            insertOrder($newOrder, $base, $status, $customerId);
             updateIngredients($toppingsArray);
             print_r($value);
 
         }
+        insertOrder($newOrder, $base, $status, $customerId);
     } else {
         echo json_last_error_msg();
     }
@@ -80,8 +84,6 @@ if (isset($_POST['orders'])) {
 
 function insertOrder($newOrder, $base, $status, $customerId)
 {
-    
-
     $servername = "localhost";
     $username = "myuser";
     $password = "mypass";
@@ -148,18 +150,3 @@ function updateIngredients($toppingsArray)
     }
 }
 
-// function updateIngredients($toppingsArray) {
-//     if ($toppingsArray) {
-//         foreach ($toppingsArray as $item => $value) {
-//             if ($query = $conn->prepare("UPDATE ingredients set amount = amount - ? where `name` = '$item';")) {
-//                 $query->bind_param("i", $value);
-//                 $query->execute();
-//                 $insertresult = $query->get_result();
-//             } else {
-//                 $error = $conn->errno . ' ' . $conn->error;
-//                 echo $error;
-//             }
-//         }
-
-//     }
-// }

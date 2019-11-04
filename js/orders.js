@@ -89,7 +89,7 @@ const submitOrder = (e) => {
     e.preventDefault();
     $.ajax({
         // url: "../php_components/process_order.php",
-        url: "../php/test.php",
+        url: "../php_components/post_order.php",
         method: "POST",
         data: {orders: JSON.stringify(orders)},
         success: function(res) {
