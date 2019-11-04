@@ -29,7 +29,7 @@ const addToOrder = (e) => {
 
     orders.push(order);
 
-    // UNCOMMENT FOR RESET document.querySelector('form').reset();
+    document.querySelector('form').reset();
     
     let displayOrder = document.querySelector('#display');
     const orderList = document.querySelector('#orderList');
@@ -52,7 +52,7 @@ const addToOrder = (e) => {
 }
 
 orderBtn.addEventListener("click", addToOrder);
-confirmOrderBtn.addEventListener("click", addToOrder);
+// confirmOrderBtn.addEventListener("click", addToOrder);
 
 
 const setAmount = (value) => {
@@ -90,7 +90,6 @@ const submitOrder = (e) => {
         method: "POST",
         data: {orders: JSON.stringify(orders)},
         success: function(res) {
-            console.log("HELLO FROM AJAX")
             console.log(res);
         }
     })

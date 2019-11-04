@@ -40,7 +40,7 @@
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Vegan Mozzarella</label>
-                            <input type="radio" name="pizza" id="pizzaRadioBtn" value="Vegan Mozzarella" required>
+                            <input type="radio" name="pizza" id="pizzaRadioBtn" value="Vegan Mozzarella">
 
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Thin crust</label>
-                            <input type="radio" name="base" id="baseRadioBtn" value="Thin crust" required>
+                            <input type="radio" name="base" id="baseRadioBtn" value="Thin crust">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
                     </div>
@@ -213,8 +213,8 @@
 
         <!-- PAYMENTS -->
         <div>
-            <button class="btn btn-dark" id="addOrderBtn">Add To Order</button>
-            <button class="btn btn-dark" id="confirmOrderBtn" onclick="document.getElementById('payment').style.display='block'"> Confirm Order</button>
+            <button class="btn btn-dark" id="addOrderBtn">Add to Order</button>
+            <button class="btn btn-dark" id="confirmOrderBtn" onclick="document.getElementById('payment').style.display='block'"> Next </button>
         </div>
         <div id="display">
             <ul id="orderList"></ul>
