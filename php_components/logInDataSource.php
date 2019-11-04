@@ -26,6 +26,7 @@ $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db_name);
 				$flag++;
 				// set session 
 				$_SESSION['uname']=$uname;							//to maintain session
+				$_SESSION['loggedin'] = true;
 				//$myURL="offers.php?emailLogin=$emailLogin&userName=$userName";					
 				header("location:../index.php");//?uname=$uname");				
 			}

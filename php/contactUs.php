@@ -4,22 +4,51 @@
 <title>Contact Us</title>
 	<!-- Style-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Pizzeria Fortuna</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<body>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="order_page.php">Order</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="contactUs.php">Contact Us</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item active">
+          <a class="nav-link" href="login.php">Login</a>          
+      </li>
+      <li class="nav-item active">
+      <a class="nav-link" href="signUp.php">Register</a>
+      </li>
+        </ul>
+  </div>
+  </nav>
+</header>
+<body style="background-color:black; color: white">
 	<div class="container">
-		<div class="jumbotron">	
-			<center>
-				<h1>Contact Us</h1>
-			</center>
+		<div class="jumbotron">
+				<center>
+				<h1>Welcome To PizzaPlace</h1>
+				</center>
 		</div>
 		<div>
 		<center>
-		<h4>Please enter the details</h4> &emsp;&emsp;
+		<h2>Please enter your details </h2> &emsp;&emsp;
 		
 		<form action="contactDataSource.php" method="post">
-			<table>
-				
+			<table>				
 				<tr>
 					<td><label for="mail">E-mail   	</label></td>
 					<td><input type="email" id="mail" name="user_mail"></td>
