@@ -5,7 +5,7 @@
    $printName=$_SESSION['uname'];
   }
   else{
-    
+
   }
   
 ?>
@@ -40,12 +40,13 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
 	<?php if (isset($_SESSION['uname'])) { ?>
+     <li class="nav-link active"> Hi <?=$_SESSION['uname']?></li>
     <li class="nav-item active">
-       <form method='post' action='php_components/logOutDataSource.php'>
+       <form method='post' action='php_components/logOutDataSource.php' >
 		      	<button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn place-order bg-dark">Logout</button>
 		  </form>	
-        <!--  <a class="nav-link" href="php_companets/logOutDataSource.php">Logout</a>  -->        
-      </li>
+    </li>
+    
      
      
 	<?php } else { ?>
