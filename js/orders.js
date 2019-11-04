@@ -5,27 +5,11 @@ let orders = [];
 
 const addToOrder = (e) => {
 
-    // if (document.getElementById('selectPizza').checked) {
-    //     const pizzaVal = document.getElementById('selectPizza').value;
-    // }
-    // const pizzaVal = document.getElementById('pizzaRadioBtn').value;
+
     const pizzaVal = document.querySelector('input[name="pizza"]:checked').value;
-    console.log(pizzaVal);
-
-    // if (document.getElementById('selectBase').checked) {
-    //     const baseVal = document.getElementById('selectBase').value;
-    // }
-    // const baseVal = document.getElementById('baseRadioBtn').value;
     const baseVal = document.querySelector('input[name="base"]:checked').value;
-    console.log(baseVal);
-
     const toppings = document.getElementsByName('topping');
-    // console.log(toppings);
 
-    // Convert topping[tomatoes] to topping, value = "tomatoes"
-    // Add amounts in js using key-value pairs??
-    
-    // console.log(toppings);
     let vals = "";
     let toppingsArray = new Array();
     for (let i = 0; i < toppings.length; i++) {
@@ -34,9 +18,6 @@ const addToOrder = (e) => {
             toppingsArray.push(setAmount(toppings[i].value));
         }
     }
-  
-    console.log(toppingsArray);
-
 
     let order = {
         pizza: pizzaVal,
@@ -51,14 +32,23 @@ const addToOrder = (e) => {
     // UNCOMMENT FOR RESET document.querySelector('form').reset();
     
     let displayOrder = document.querySelector('#display');
-    // const ordersString = JSON.stringify(orders);
-    // console.log(ordersString);
-    displayOrder.textContent = JSON.stringify(orders);
+    const orderList = document.querySelector('#orderList');
+    const li = document.createElement("li");
+    let orderText = "";
+    let toppingsString = "";
+    // for (const [topping, value] of order.topping) {
+    //     console.log(topping);
+    // }
+    order.topping.forEach(function(element){
+        Object.keys(element).forEach(key => {
+            toppingsString += key + " ";
+         }) 
+    });
 
-    console.log("ORDER: ")
-    console.log(order);
+    li.innerText = orderText.concat(order.pizza, ", ", order.base, ", ", toppingsString);
+    orderList.appendChild(li);
 
-   
+    // displayOrder.textContent = JSON.stringify(orders);
 }
 
 orderBtn.addEventListener("click", addToOrder);
@@ -96,7 +86,6 @@ const setAmount = (value) => {
 const submitOrder = (e) => {
     e.preventDefault();
     $.ajax({
-        // url: "../php_components/process_order.php",
         url: "../php_components/post_order.php",
         method: "POST",
         data: {orders: JSON.stringify(orders)},

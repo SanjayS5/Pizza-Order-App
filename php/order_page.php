@@ -216,7 +216,9 @@
             <button class="btn btn-dark" id="addOrderBtn">Add To Order</button>
             <button class="btn btn-dark" id="confirmOrderBtn" onclick="document.getElementById('payment').style.display='block'"> Confirm Order</button>
         </div>
-        <div id="display"></div>
+        <div id="display">
+            <ul id="orderList"></ul>
+        </div>
         <div>
             
             <tr>
