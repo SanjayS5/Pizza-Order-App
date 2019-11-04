@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+   
+?>
 <html>
 <head>
 <title>Sign Up</title>
@@ -26,21 +30,11 @@
         <a class="nav-link" href="contactUs.php">Contact Us</a>
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-	<?php if (!$_SESSION['uname']) { ?>
+    <ul class="nav navbar-nav navbar-right">	
       <li class="nav-item active">
           <a class="nav-link" href="login.php">Login</a>  
 	  </li>
-	  <li class="nav-item active">
-      <a class="nav-link" href="signUp.php">Register</a>
-      </li>
-	<?php } else { ?>
-	  <li class="nav-item active">
-          <a class="nav-link" href="logOutDataSource.php">Logout</a>          
-      </li>
-     
-	  <?php } ?>
-        </ul>
+	</ul>
   </div>
 </nav>
 </header>
