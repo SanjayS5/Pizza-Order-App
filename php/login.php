@@ -74,7 +74,7 @@
 								<table border='0' cellpadding='0' cellspacing='0' width='450px' align='center'>
 												
 						<tr>
-						<td align='center'><button type="submit" class="btn btn-primary" id="btnLogin" name='Login' value="Loging">LogIn</button>
+						<td align='center'><button type="submit" class="btn btn-dark" id="btnLogin" name='Login' value="Loging">LogIn</button>
 											
 					</tr>
 					<tr> <td>&nbsp;</td> </tr>

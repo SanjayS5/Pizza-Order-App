@@ -13,7 +13,7 @@ if(isset($_SESSION['uname']))
  	<!-- Style-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	
+		
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Pizzeria Fortuna</a>
@@ -37,8 +37,8 @@ if(isset($_SESSION['uname']))
 	<?php if (isset($_SESSION['uname'])) { ?>
      <li class="nav-link active"> Hi <?=$_SESSION['uname']?></li>
     <li class="nav-item active">
-       <form method='post' action='php_components/logOutDataSource.php' >
-		      	<button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn place-order bg-dark">Logout</button>
+       <form method='post' action='../php_components/logOutDataSource.php' >
+		      	<button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn btn-dark">Logout</button>
 		  </form>	
     </li>   
      

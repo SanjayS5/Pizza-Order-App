@@ -10,7 +10,9 @@
 <title>Contact Us</title>
 	<!-- Style-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
 </head>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,11 +37,10 @@
 	<?php if (isset($_SESSION['uname'])) { ?>
      <li class="nav-link active"> Hi <?=$_SESSION['uname']?></li>
     <li class="nav-item active">
-       <form method='post' action='php_components/logOutDataSource.php' >
-		      	<button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn place-order bg-dark">Logout</button>
-		  </form>	
-    </li>   
-     
+       <form method='post' action='../php_components/logOutDataSource.php' >
+	   <button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn btn-dark">Logout</button>
+				  </form>	
+    </li>       
 	<?php } else { ?>
 	  <li class="nav-item active">
           <a class="nav-link" href="login.php">Login</a>  
@@ -64,25 +65,25 @@
 		<h2>Please enter your details </h2> &emsp;&emsp;
 		
 		<form action="contactDataSource.php" method="post">
-			<table>					
+			<table class="contactTable" width:1000px>					
 				<tr>
-					<td><label for="mail">E-mail   	</label></td>
-					<td><input type="email" id="mail" name="user_mail"></td>
+					<td ><label for="mail">E-mail   	</label></td>
+					<td height="50" width="130"><input type="email" id="mail" name="user_mail" width=50%></td>
 				</tr>
 				<tr>
 					<td><label for="mail">Subject 	</label></td>
-					<td><input type="text" id="subject" name="user_subject"></td>
+					<td  height="50" width="130"><input type="text" id="subject" name="user_subject" ></td>
 				</tr>
 				<tr>
 					<td><label for="msg" >Message</label></td>
-					<td><textarea id="msg" name="user_message" rows="5" cols="23"></textarea></td>
+					<td height="50" width="130"><textarea id="msg" name="user_message" rows="5" cols="23"></textarea></td>
 				</tr>
 				</table>
 				<table>
 				<tr></tr>
 				<tr>
 					<td><center>
-						<button type="submit" class="btn btn-primary" id="btncontact" name='submit' value="Submit">Submit</button>
+						<button type="submit" class="btn btn-dark" id="btncontact" name='submit' value="Submit">Submit</button>
 					</center></td>
 				</tr>
 				</table>

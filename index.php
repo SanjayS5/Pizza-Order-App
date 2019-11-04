@@ -45,7 +45,9 @@
        <form method='post' action='php_components/logOutDataSource.php' >
 		      	<button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn place-order bg-dark">Logout</button>
 		  </form>	
-    </li>   
+    </li>
+    
+     
      
 	<?php } else { ?>
 	  <li class="nav-item active">

@@ -92,7 +92,7 @@
 								<table border='0' cellpadding='0' cellspacing='0' width='450px' align='center'>
 								<tr> <td>&nbsp;</td> </tr>					
 						<tr>
-						<td align='center'><button type="submit" class="btn btn-primary" id="btnSignup" name='REGISTER' value="Register">Submit</button>
+						<td align='center'><button type="submit" class="btn btn-dark" id="btnSignup" name='REGISTER' value="Register">Submit</button>
 											<!--<input type='submit' id="btnSignup" name='REGISTER' value="Register" >--></td>
 					</tr>
 					<tr> <td>&nbsp;</td> </tr>
