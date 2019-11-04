@@ -65,7 +65,7 @@
 		<center>
 		<form action="../php_components/contactDataSource.php" method="post">
     <label for="name">Name</label> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="fname" name="user_mail" placeholder="Your name.." width="48" height="148"><br/>
+    <input type="text" id="fname" name="user_name" placeholder="Your name.." width="48" height="148"><br/>
 
     <label for="email">Email</label> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
     <input type="text" id="lname" name="user_mail"placeholder="Your email.."><br/>
@@ -73,14 +73,14 @@
     <label for="phone">Phone Number</label>  &nbsp;&nbsp; &nbsp;&nbsp;
 	<input type="text" id="phone" name="user_phone" placeholder="Your phone.."><br/>   
 
-    <label for="subject">Message</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+    <label for="subject">Message</label>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
     <textarea id="subject" name="user_message" placeholder="Write something.." style="height:200px" cols='23'></textarea>
 	<br/>
 	<centre>
 	<br/>
-	&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<button type="submit" class="btn btn-dark" id="btncontact" name='submit' value="Submit" >Submit</button>
-					</br/>
+	</br/>
 	</center>
   </form>
 		
@@ -114,20 +114,4 @@
 		</div>									
 	</div>	
 </body>
-<style>
-input[type=text], select, textarea {
-  width: 40%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-button{
-   
-    width:200px;
-}
-</style>
 </html>

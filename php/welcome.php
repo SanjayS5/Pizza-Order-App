@@ -11,7 +11,7 @@
 <title>Welcome</title>
 	<!-- Style-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	
 </head>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -59,21 +59,26 @@
 	?> 
 	
 	<div class="container">
-			<div class="jumbotron">
 			
-			<center>
-					<h1>Welcome To PizzaPlace</h1>
-			</center>
-			</div>
 		<div class="register">
         <center>
-		<h1>Welcome <?=$_SESSION['uname']?></h1>
-        <h5>Our customers are valuable assets for us. Thanks for Signup. We will mail you our deals and offers as soon as possible</h5>
-       <h3> Please log in to place order</h3>
+		<h5>Awesome!  <?=$_SESSION['uname']?></h5>
+        <h5>You have been succesfully registered</h5>
+       <h5> Click here to login</h5>
         <form method='post' action='login.php'>
         <button type="submit" class="btn btn-primary" id="btnLogin" name='Login' value="Loging">LogIn</button>
 		</form>	
         </center>		
 	    </div>
 </body>
+<footer class="footer mt-auto py-3 navbar-dark bg-dark" width=100%>
+  <div class="container">
+  <center><I>
+    <p>Address: 5, Napoli Street, Wellington 6011</p>
+    <span>Email: pizzeriafortuna@mail.com</span>
+    <span>Phone: 1800-834-5683</span>
+    <p>&copy 2019 Pizzeria Fortuna</p></I>
+</center></I>
+  </div>
+</footer>
 </html>

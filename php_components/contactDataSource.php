@@ -1,7 +1,52 @@
 <?php
-require '../phpmailer/PHPMailerAutoload.php';
+
 session_start();
-$mail = new PHPMailer(true); 
+
+$dbhost = 'localhost';
+$dbuser = 'myuser';
+$dbpass = 'mypass';
+$db_name = 'pizzadb';
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db_name);
+	if(! $conn ) {
+    echo"not Connected";
+            die('Could not connect: ' . mysqli_error());
+      }
+    else
+	{
+    echo"Connected";
+    $name = $_POST['user_name'];	
+		$email = $_POST['user_mail'];
+		$phone = $_POST['user_phone'];
+    $message=$_POST['user_message'];
+    // insert to member table
+    try{
+			$query = $conn->prepare("INSERT INTO contactUs (name , email, phone,message, ) VALUES (?, ?, ?,?);");
+      $query->bind_param("ssss", $name,$email, $phone, $message); 
+      $query->execute();
+      echo"inserted";
+				//echo "Record is inserted into member table-succefully";
+        $result = $query->get_result();
+        print_r($result);
+       	echo"<script>window.location='../php/contactUs.php'</script>";	
+       
+      } catch(Exception $e){ 
+        echo"not inserted";
+        echo "<script type='text/javascript'>alert('Enter details again');</script>";
+				echo"<script>window.location='../php/contactUs.php'
+						</script>";	
+        die( "ERROR: Could not able to execute update the member table with custid. "  
+                        . mysqli_error($conn)); 
+        }  	
+     
+}
+
+
+		
+    
+
+
+//require '../phpmailer/PHPMailerAutoload.php';
+/*$mail = new PHPMailer(true); 
 try {
     //Server settings
    // $mail->SMTPDebug = 2;
