@@ -1,9 +1,10 @@
 const orderBtn = document.getElementById("addOrderBtn");
-const confirmOrderBtn = document.getElementById("confirmOrderBtn");
+const confirmOrderBtn = document.getElementById("nextBtn");
 
 let orders = [];
 
 const addToOrder = (e) => {
+    e.preventDefault();
 
     // TODO check if these are not null. Optional elements
     const pizzaVal = document.querySelector('input[name="pizza"]:checked').value;
@@ -59,6 +60,11 @@ const displayPayment = () => {
     }
     const paymentForm = document.getElementById('payment');
     paymentForm.style.display = 'block';
+
+    const name = document.getElementById("name").required = true;
+    const email = document.getElementById("email").required = true;
+    const address = document.getElementById("address").required = true;
+    const card = document.getElementById("card").required = true;
 }
 
 
@@ -83,7 +89,7 @@ const addDetailsToOrder = () => {
 }
 
 orderBtn.addEventListener("click", addToOrder);
-confirmOrderBtn.addEventListener("click", displayPayment);
+nextBtn.addEventListener("click", displayPayment);
 
 
 const setAmount = (value) => {
