@@ -61,7 +61,25 @@ const displayPayment = () => {
     paymentForm.style.display = 'block';
 }
 
-// document.getElementById('payment').style.display='block'
+
+const addDetailsToOrder = () => {
+     // Get payment details
+     const name = document.querySelector('#name').value;
+     const email = document.querySelector('#email').value;
+     const address = document.querySelector('#address').value;
+    
+     orders.forEach((element, index, array) => {
+         element.name = name;
+         element.email = email;
+         element.address = address;
+     })
+
+     console.log("LOGGING ADDED PROPS");
+     orders.forEach((element, index, array) => {
+        console.log(element.name);
+        console.log(element.email);
+    })
+}
 
 orderBtn.addEventListener("click", addToOrder);
 confirmOrderBtn.addEventListener("click", displayPayment);
@@ -108,5 +126,5 @@ const submitOrder = (e) => {
 }
 
 const submitOrderBtn = document.getElementById('submitOrderBtn');
+submitOrderBtn.addEventListener("click", addDetailsToOrder);
 submitOrderBtn.addEventListener("click", submitOrder);
-
