@@ -16,6 +16,7 @@
 </head>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<img src="../assets/img/pizzaLogo.jpg" alt="pizza" height="42" width="42">
   <a class="navbar-brand" href="#">Pizzeria Fortuna</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -55,16 +56,35 @@
 </header>
 <body style="background-color:black; color: white">
 	<div class="container">
-		<div class="jumbotron">
-				<center>
-				<h1>Welcome To PizzaPlace</h1>
-				</center>
-		</div>
+	<br/>
+	<center>
+		<h1>  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Contact Us</h1>
+		<br/>
+	<center>
 		<div>
 		<center>
-		<h2>Please enter your details </h2> &emsp;&emsp;
+		<form action="../php_components/contactDataSource.php" method="post">
+    <label for="name">Name</label> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="fname" name="user_mail" placeholder="Your name.." width="48" height="148"><br/>
+
+    <label for="email">Email</label> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+    <input type="text" id="lname" name="user_mail"placeholder="Your email.."><br/>
+
+    <label for="phone">Phone Number</label>  &nbsp;&nbsp; &nbsp;&nbsp;
+	<input type="text" id="phone" name="user_phone" placeholder="Your phone.."><br/>   
+
+    <label for="subject">Message</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+    <textarea id="subject" name="user_message" placeholder="Write something.." style="height:200px" cols='23'></textarea>
+	<br/>
+	<centre>
+	<br/>
+	&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button type="submit" class="btn btn-dark" id="btncontact" name='submit' value="Submit" >Submit</button>
+					</br/>
+	</center>
+  </form>
 		
-		<form action="contactDataSource.php" method="post">
+		<!--<form action="../php_components/contactDataSource.php" method="post">
 			<table class="contactTable" width:1000px>					
 				<tr>
 					<td ><label for="mail">E-mail   	</label></td>
@@ -80,7 +100,8 @@
 				</tr>
 				</table>
 				<table>
-				<tr></tr>
+				<tr>&nbsp;</tr>
+				<tr>&nbsp;</tr>
 				<tr>
 					<td><center>
 						<button type="submit" class="btn btn-dark" id="btncontact" name='submit' value="Submit">Submit</button>
@@ -88,9 +109,25 @@
 				</tr>
 				</table>
 				
-		</form>
+		</form>-->
 		</center>
 		</div>									
 	</div>	
 </body>
+<style>
+input[type=text], select, textarea {
+  width: 40%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+button{
+   
+    width:200px;
+}
+</style>
 </html>

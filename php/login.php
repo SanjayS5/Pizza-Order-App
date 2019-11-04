@@ -5,11 +5,13 @@
 <title>Login</title>
 	<!-- Style-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+  	  <link rel="stylesheet" type="text/css" href="css/index.css">
+	  <link rel="stylesheet" type="text/css" href="../css/style.css">
 	
 </head>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<img src="../assets/img/pizzaLogo.jpg" alt="pizza" height="42" width="42">
   <a class="navbar-brand" href="#">Pizzeria Fortuna</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -41,22 +43,14 @@
 </header>
 <body style="background-color:black; color: white">
 	<div class="container">
-		<div class="jumbotron" style="color: white">
 		
-				<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						Welcome To PizzaPlace</h1>
-		</div>
 		<div class="register">
+		<br/>	<br/>	<br/> 
+			<center><H1>Login</H1></center>
+			<br/>	<br/>
 			<form method="post" id="register" action="../php_components/logInDataSource.php" method="post" >
 			<table id="tablesignup" border='0' width='550px' cellpadding='0' cellspacing='0' align='center'>
-				<center>
-					<tr>						
-						<td><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						Login <hr/></h2></td>		
-					</tr>	
-								
-									
-				</center>
+				
 					<tr>						
 						<table border='0' width='350px' cellpadding='0' cellspacing='0' align='center'>
 							<tr>						
@@ -86,4 +80,14 @@
 	</form>					
 	</div>
 </body>
+<footer class="footer mt-auto py-3 navbar-dark bg-dark" width=100%>
+  <div class="container">
+  <center><I>
+    <p>Address: 5, Napoli Street, Wellington 6011</p>
+    <span>Email: pizzeriafortuna@mail.com</span>
+    <span>Phone: 1800-834-5683</span>
+    <p>&copy 2019 Pizzeria Fortuna</p></I>
+</center>
+  </div>
+</footer>
 </html>
