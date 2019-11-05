@@ -8,9 +8,7 @@
 <html>
 <head>
 <title>Contact Us</title>
-	<!-- Style-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../css/contact_us.css">
 	
@@ -59,17 +57,27 @@
 <body>
 	<div class="container">
 	<br/>
+	<?php
+
+	if(isset($_POST["submit"]))
+	{
+	include('../php_components/contactDataSource.php');
+	$printMsg=store_record_into_contactTable();
+	if($printMsg==0){
+		echo "<h3>Please re-enter your details</h3>";
+	}
+	  else{
+		echo "<h3>Successfully submitted</h3>";
+
+	}
+		}?>
 	
 	<h1>Contact Us</h1>
 	<hr>
-	<!--<div class="header-line">
-		<hr>
-	</div>-->
-	<br/>
 	
 	<div>
 		
-	<form class="contact-form" ><!--action="../php_components/contactDataSource.php" method="Post">-->
+	<form class="contact-form" method="POST">
 	
 		<label for="name">Name</label> 
 		
@@ -94,89 +102,8 @@
 	<br/>
 	
   </form>
-  <span id="error_message" style="display:none;">Some thing want worng please Re-enter your deatails</span>
-  <span id="success_message" style="display:none;">ThankYou we will get back to you assp</span>
-			
-  <?php
-	if(isset($_POST["submit"]))
-	{
-		include('../php_components/contactDataSource.php');
-		$printMsg=store_record_into_contactTable();
-		if($printMsg==0){?>
-			<script>
-			  document.getElementById("error_message").style.display= 'visible';
-			  </script>
-		<?php}
-  		else{?>
-			<script>
-			document.getElementById("success_message").style.display= 'visible';
-			</script>
-		<?php	}
-			}?>
-   
- 
-  <!--<span id="error_message" class="text-danger"> </span>
-
-  <span id="success_message" class="text-success"> </span>-->
-
-
-  <?php/*
-	if(isset($_POST["submit"]))
-	{
-		include('../php_components/contactDataSource.php');
-		$printMsg=insert_Return_Message();
-		if($printMsg==0){
-			$.ajax({
-			url : "../php/contactUs.php",
-            type: "POST",
-            // You can serialize the form here
-            data : thisForm.serialize(),
-            success: function(response) {
-				$('error_message').fadeIn().html("Please Enter The Details Again");
-
-			});
-		}else{
-			$.ajax({
-				url : "../php/contactUs.php",
-				type: "POST",
-				// You can serialize the form here
-				data : thisForm.serialize(),
-				success: function(response) {
-					$('success_message').fadeIn().html("thanks");	
-				});
-		
-		}*/
-		
- 
-	
-		
-		<!--<form action="../php_components/contactDataSource.php" method="post">
-			<table class="contactTable" width:1000px>					
-				<tr>
-					<td ><label for="mail">E-mail   	</label></td>
-					<td height="50" width="130"><input type="email" id="mail" name="user_mail" width=50%></td>
-				</tr>
-				<tr>
-					<td><label for="mail">Subject 	</label></td>
-					<td  height="50" width="130"><input type="text" id="subject" name="user_subject" ></td>
-				</tr>
-				<tr>
-					<td><label for="msg" >Message</label></td>
-					<td height="50" width="130"><textarea id="msg" name="user_message" rows="5" cols="23"></textarea></td>
-				</tr>
-				</table>
-				<table>
-				<tr>&nbsp;</tr>
-				<tr>&nbsp;</tr>
-				<tr>
-					<td><center>
-						<button type="submit" class="btn btn-dark" id="btncontact" name='submit' value="Submit">Submit</button>
-					</center></td>
-				</tr>
-				</table>
-				
-		</form>-->
-		</center>
+  
+  
 		</div>									
 	</div>	
 </body>

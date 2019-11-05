@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?session_start();
+<?php
+session_start();
 if(isset($_SESSION['uname']))
 {
   $printuname=$_SESSION['uname'];
@@ -99,8 +100,7 @@ if(isset($_SESSION['uname']))
 				<td align='center'><strong>Order Toppings </strong></td>
 				<td align='center'><strong>
 				<?php
-				//include('../php_components/orderConfirmDataSource.php');
-				printOrderList($itemList);
+				 printOrderList($itemList);
 				?>	
 				</strong></td>			
 		</tr>	

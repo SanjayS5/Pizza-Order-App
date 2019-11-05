@@ -1,9 +1,5 @@
 <?php
-session_start();
-if(isset($_SESSION['uname']))
-{
-  $uname=$_SESSION['uname'];
-}
+
 //method to get the memberId using user name from method table 
 function getMemberIdByUserName($memberName)
 {
@@ -241,12 +237,9 @@ function getItemListByOrderId($orderId){
 			$row = $result->fetch_assoc();
 			//print_r($row);
 			$itemListStr=$row['toppings'];
-			if(strlen($itemListStr)!=0){
-				//Vegan Mozzarella,+onions,+Mushrooms,+Black olives,
+			if(strlen($itemListStr)!=0){				
 				$itemList= preg_split("/\,\+/",$itemListStr);
-				//foreach($itemList as $x){
-				//echo "$x<br>";
-			//}			
+					
 		}
 	}	
 	return $itemList;		
@@ -255,6 +248,7 @@ function printOrderList($itemList)
 {
 		foreach($itemList as $x){
 			echo "$x<br>";
+			// if($itemList.size)
 		}			
 }
 

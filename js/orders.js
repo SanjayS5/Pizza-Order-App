@@ -1,3 +1,4 @@
+
 const orderBtn = document.getElementById("addOrderBtn");
 const confirmOrderBtn = document.getElementById("nextBtn");
 
@@ -118,6 +119,8 @@ const addDetailsToOrder = () => {
      if (document.querySelector('#memberId') == null) {
         alert("User not logged in or failure");
         return;
+        memberId = 0;
+        //function insert record......
     } else {
         memberId = document.querySelector('#memberId').innerText;
         memberId = parseInt(memberId, 10);
