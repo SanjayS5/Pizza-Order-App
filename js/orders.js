@@ -4,6 +4,7 @@ const confirmOrderBtn = document.getElementById("nextBtn");
 
 let orders = [];
 let listItemId = 0;
+let price = 0;
 const addToOrder = (e) => {
     e.preventDefault();
 
@@ -87,10 +88,7 @@ const addToOrder = (e) => {
 
 const displayPrice = () => {
     const priceText = document.getElementById('priceText');
-    let price = 0;
-    orders.forEach(function(element){
-        price += element.price;
-    })
+    price += orders[0].price;
     priceText.innerText = "Order total: $" + price;
 }
 
@@ -113,6 +111,8 @@ const deleteOrder = (e) => {
     orders.forEach(function(element){
         console.log(element);
     });
+    price -= 10;
+    document.getElementById('priceText').innerText = "Order total: $" + price;
 }
 
 const displayPayment = () => {
