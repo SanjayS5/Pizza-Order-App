@@ -1,5 +1,45 @@
-/* Create colour vars */
+@import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Mansalva&display=swap');
+body{
+  background-color: #000;
+  color: #fff;
+}
+.navbar-brand{
+  font-family: 'Mansalva', cursive;
+  font-size: 30px;
+}
+.nav-item a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
 
-/* .footer {
-    background: grey;
-} */
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+.nav-item a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.nav-item a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+footer{
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  nav {
+    background-color: #000;
+  }
+}

@@ -18,8 +18,9 @@
   <div class="row main-top justify-content-center align-items-center">
     <div class="page-header">
       <h1>Pizzeria Fortuna</h1>
+      <h4>You wanna pizza me?</h4>
       <form action="php/order_page.php" method="POST">
-        <button type="submit" class="btn place-order bg-dark">Place Order</button>
+        <button type="submit" class="btn place-order">Place Order</button>
       </form>
     </div>
     <div>
@@ -27,11 +28,11 @@
   </div>
 
 <div class="container">
-  <div class="our-story">
-    <h2>Our Story</h2>
+  <div class="our-menu">
+    <h2>Our Menu</h2>
 
-        <div class="image-story">
-            <img src="assets/img/ourStory.jpg" alt="" >
+        <div class="image-menu">
+            <img src="assets/img/ourMenu.jpg" alt="" >
         </div>
     <div class="describe-story">
       <p>
@@ -50,12 +51,45 @@
   </div>
 </div>
 
+<div class="row main-bottom justify-content-center align-items-center">
+  <div class="container">
+    <div class="our-story">
+      <!-- <div class="page-header"> -->
+      <!-- <h2>Our Story</h2> -->
+      <div class="describe-story">
+        <h2>Our Story</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem pariatur
+          fuga corrupti alias deserunt, labore porro placeat provident optio. Ut fugiat magni sint
+          vel quos ullam, laborum harum quas.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Temporibus voluptatem pariatur fuga corrupti alias deserunt, labore porro placeat provident
+          optio. Ut fugiat magni sint vel quos ullam, laborum harum quas.
+        </p>
+        <p class="describe-story-bottom">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatem pariatur
+          fuga corrupti alias deserunt, labore porro placeat provident optio. Ut fugiat magni sint
+          vel quos ullam, laborum harum quas.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Temporibus voluptatem pariatur fuga corrupti alias deserunt, labore porro placeat provident
+          optio. Ut fugiat magni sint vel quos ullam, laborum harum quas.
+        </p>
+        <!-- <form class="our-story-form" action="php/order_page.php" method="POST">
+          <button type="submit" class="btn place-order">Read More</button>
+        </form> -->
+      </div>
+    <!-- <h1>Pizzeria Fortuna</h1>
+    <form class="scale-up-center" action="php/order_page.php" method="POST">
+      <button type="submit" class="btn place-order bg-dark">Place Order</button>
+    </form> -->
+    </div>
+  </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-<footer class="footer mt-auto py-3 navbar-dark bg-dark">
+<footer class="footer mt-auto py-3 navbar-dark">
   <div class="container">
     <p>Address: 5, Napoli Street, Wellington 6011</p>
     <span>Email: pizzeriafortuna@mail.com</span>
