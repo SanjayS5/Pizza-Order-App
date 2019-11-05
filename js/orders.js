@@ -169,6 +169,7 @@ const submitOrder = (e) => {
         data: { orders: JSON.stringify(orders) },
         success: function (res) {
             console.log(res);
+            window.location = "orderConfirmation.php";
         }
     })
 }

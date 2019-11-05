@@ -7,6 +7,16 @@
 //   $ingredient = "";
 //   ?>
 
+<?php
+session_start();
+if(isset($_SESSION['uname']))
+{
+  $printuname=$_SESSION['uname'];
+  include('../php_components/findMemberIdDataSource.php');
+  $memberId=getMemberIdByUserName($_SESSION['uname']);
+
+ }?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,10 +30,53 @@
     <script src="https://kit.fontawesome.com/bdfac7b89e.js" crossorigin="anonymous"></script>
     <title>Pizzeria Fortuna</title>
 </head>
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="../index.php">Pizzeria Fortuna</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="order_page.php">Order</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="contactUs.php">Contact Us</a>
+      </li> 
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+  <?php if (isset($_SESSION['uname'])) { ?>
+   <li class="nav-link active"> your memberID:: <?=$memberId?></li>
+     <li class="nav-link active"> Hi <?=$_SESSION['uname']?></li>
+    <li class="nav-item active">
+       <form method='post' action='../php_components/logOutDataSource.php' >
+                  <button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn place-order bg-dark">Logout</button>
+          </form>
+    </li>
+
+
+
+    <?php } else { ?>
+      <li class="nav-item active">
+          <a class="nav-link" href="login.php">Login</a>
+      </li>
+      <li class="nav-item active">
+      <a class="nav-link" href="signUp.php">Register</a>
+      </li>
+      <?php } ?>
+        </ul>
+  </div>
+</nav>
+
+</header>
 
 <body>
-    <?php include "../php_components/navbar.php";
-    include "../php_components/check_ingredients.php" ?>
+    <?php include "../php_components/check_ingredients.php" ?>
     <div class="container">
         <h1>Place Order</h1>
         <form action="../php_components/process_order.php" method="POST">
