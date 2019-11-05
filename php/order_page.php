@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/order_style.css">
+    <script src="https://kit.fontawesome.com/bdfac7b89e.js" crossorigin="anonymous"></script>
     <title>Pizzeria Fortuna</title>
 </head>
 
@@ -214,7 +215,7 @@
         <!-- PAYMENTS -->
         <div>
             <button class="btn btn-dark" id="addOrderBtn">Add to Order</button>
-            <button class="btn btn-dark" id="confirmOrderBtn"> Next </button>
+            <button class="btn btn-dark" id="nextBtn"> Next </button>
         </div>
         <div id="display">
         <h3>Order Details</h3>
@@ -261,7 +262,7 @@
                                         <strong>Name</strong>
                                     </td>
                                     <td>
-                                        <input type="text" id="name" name="name" placeholder="Enter name" required />
+                                        <input type="text" id="name" name="name" placeholder="Enter name"/>
                                     </td>
 
                                 </tr>
@@ -273,7 +274,7 @@
                                         <strong>Email </strong>
                                     </td>
                                     <td>
-                                        <input type="email" id="email" name="email" placeholder="Enter email" required />
+                                        <input type="email" id="email" name="email" placeholder="Enter email"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -284,8 +285,7 @@
                                         <strong>Address</strong>
                                     </td>
                                     <td>
-                                        <input type="text" id="address" name="address" placeholder="Enter address" required
-                                        />
+                                        <input type="text" id="address" name="address" placeholder="Enter address"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -296,8 +296,7 @@
                                         <strong>Card</strong>
                                     </td>
                                     <td>
-                                        <input type="text" id="card" name="card" pattern="[0-9.]+" placeholder="Enter payment card number"
-                                            required />
+                                        <input type="text" id="card" name="card" pattern="[0-9.]+" placeholder="Enter payment card number"/>
                                     </td>
                                 </tr>
                                 <tr>

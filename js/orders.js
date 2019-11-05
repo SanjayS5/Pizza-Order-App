@@ -1,23 +1,52 @@
 const orderBtn = document.getElementById("addOrderBtn");
-const confirmOrderBtn = document.getElementById("confirmOrderBtn");
+const confirmOrderBtn = document.getElementById("nextBtn");
 
 let orders = [];
 
 const addToOrder = (e) => {
+    e.preventDefault();
+
+    let pizzaVal = "";
+    let baseVal = "";
+    let toppings = [];
 
     // TODO check if these are not null. Optional elements
-    const pizzaVal = document.querySelector('input[name="pizza"]:checked').value;
-    const baseVal = document.querySelector('input[name="base"]:checked').value;
-    const toppings = document.getElementsByName('topping');
+    if (document.querySelector('input[name="pizza"]:checked') == null) {
+        alert("Please add a pizza to your order to continue.");
+        pizzaVal = "";
+        return;
+    } else {
+        pizzaVal = document.querySelector('input[name="pizza"]:checked').value;
+    }
+      
+    if (document.querySelector('input[name="base"]:checked') == null) {
+        alert("Please add a base to your order to continue.");
+        baseVal = "";
+        return;
+    } else {
+       baseVal = document.querySelector('input[name="base"]:checked').value;
+    }
+    
+    if (document.querySelectorAll('input[type="checkbox"]').checked == false) {
+        console.log("fail");
+        toppings = [];
+    } else {
+        console.log("success");
+        toppings = document.getElementsByName('topping');        
+    }
+    // toppings = document.getElementsByName('input[name="topping"]:checked').value; 
 
     let vals = "";
     let toppingsArray = new Array();
-    for (let i = 0; i < toppings.length; i++) {
-        if (toppings[i].checked) {
-            // vals += "," + toppings[i].value;
-            toppingsArray.push(setAmount(toppings[i].value));
+    if (toppings) {
+        for (let i = 0; i < toppings.length; i++) {
+            if (toppings[i].checked) {
+                // vals += "," + toppings[i].value;
+                toppingsArray.push(setAmount(toppings[i].value));
+            }
         }
     }
+    
 
     let order = {
         pizza: pizzaVal,
@@ -34,6 +63,7 @@ const addToOrder = (e) => {
     let displayOrder = document.querySelector('#display');
     const orderList = document.querySelector('#orderList');
     const li = document.createElement("li");
+    li.setAttribute("id", "1");
     let orderText = "";
     let toppingsString = "";
     // for (const [topping, value] of order.topping) {
@@ -47,18 +77,35 @@ const addToOrder = (e) => {
 
     li.innerText = orderText.concat(order.pizza, ", ", order.base, ", ", toppingsString);
     orderList.appendChild(li);
+    const deleteBtn = document.createElement('button');
+    deleteBtn.addEventListener("click", deleteOrder);
+    deleteBtn.innerHTML = `<i class="fas fa-times"></i>`;
+    deleteBtn.style.background = "none";
+    deleteBtn.style.border = "none";
+    li.appendChild(deleteBtn);
 
     // displayOrder.textContent = JSON.stringify(orders);
 }
 
+const deleteOrder = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    console.log(e.target.parentElement);
+}
+
 const displayPayment = () => {
     if (orders.filter(e => e.pizza).length > 0) {
-        console.log("There is a pizza");
+        const paymentForm = document.getElementById('payment');
+        paymentForm.style.display = 'block';
     } else {
-        console.log("There is no pizza");
+        alert("There are no pizzas in your order. Please add at least one to continue.");
     }
-    const paymentForm = document.getElementById('payment');
-    paymentForm.style.display = 'block';
+    
+
+    const name = document.getElementById("name").required = true;
+    const email = document.getElementById("email").required = true;
+    const address = document.getElementById("address").required = true;
+    const card = document.getElementById("card").required = true;
 }
 
 
@@ -83,7 +130,7 @@ const addDetailsToOrder = () => {
 }
 
 orderBtn.addEventListener("click", addToOrder);
-confirmOrderBtn.addEventListener("click", displayPayment);
+nextBtn.addEventListener("click", displayPayment);
 
 
 const setAmount = (value) => {

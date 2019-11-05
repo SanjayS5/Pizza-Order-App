@@ -12,16 +12,15 @@ if (isset($_POST['orders'])) {
     if (json_last_error() == JSON_ERROR_NONE) {
         $newOrder = "";
         $base = "";
-        $status = "waiting";
-        $customerId = 33;
+        $status = "Waiting";
         $name = "";
         $email = "";
         $address = "";
         $memberId = 0;
         foreach ($order as $item => $value) {
-            $name .= $value['name'];
-            $email .= $value['email'];
-            $address .= $value['address'];
+            $name = $value['name'];
+            $email = $value['email'];
+            $address = $value['address'];
             // $memberId .= $value['memberId'];
             $pizza = $value['pizza'];
             $baseVal = $value['base'];
