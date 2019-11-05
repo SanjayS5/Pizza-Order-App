@@ -11,7 +11,6 @@ const addToOrder = (e) => {
     let baseVal = "";
     let toppings = [];
 
-    // TODO check if these are not null. Optional elements
     if (document.querySelector('input[name="pizza"]:checked') == null) {
         alert("Please add a pizza to your order to continue.");
         pizzaVal = "";
@@ -35,14 +34,12 @@ const addToOrder = (e) => {
         console.log("success");
         toppings = document.getElementsByName('topping');        
     }
-    // toppings = document.getElementsByName('input[name="topping"]:checked').value; 
 
     let vals = "";
     let toppingsArray = new Array();
     if (toppings) {
         for (let i = 0; i < toppings.length; i++) {
             if (toppings[i].checked) {
-                // vals += "," + toppings[i].value;
                 toppingsArray.push(setAmount(toppings[i].value));
             }
         }
@@ -54,8 +51,7 @@ const addToOrder = (e) => {
         pizza: pizzaVal,
         base: baseVal,
         topping: toppingsArray,
-        // email: "a",
-        // address: "a",
+        price: 10,
     }
 
     orders.push(order);
@@ -68,9 +64,7 @@ const addToOrder = (e) => {
     li.setAttribute("id", listItemId);
     let orderText = "";
     let toppingsString = "";
-    // for (const [topping, value] of order.topping) {
-    //     console.log(topping);
-    // }
+
     order.topping.forEach(function (element) {
         Object.keys(element).forEach(key => {
             toppingsString += key + " ";
@@ -86,9 +80,18 @@ const addToOrder = (e) => {
     deleteBtn.style.background = "none";
     deleteBtn.style.border = "none";
     li.appendChild(deleteBtn);
+    displayPrice();
 
     listItemId++;
-    // displayOrder.textContent = JSON.stringify(orders);
+}
+
+const displayPrice = () => {
+    const priceText = document.getElementById('priceText');
+    let price = 0;
+    orders.forEach(function(element){
+        price += element.price;
+    })
+    priceText.innerText = "Order total: $" + price;
 }
 
 const deleteOrder = (e) => {
