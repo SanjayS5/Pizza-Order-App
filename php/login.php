@@ -42,59 +42,27 @@
 <body style="background-color:black; color: white">
 	<div class="container">		
 		<div class="register">
-		<br/>	<br/>	<br/> 
-			<h1>Login</h1>
-			<br/>
+		<br/>
+			<h1>Login</h1>			
 			
 			<form class="contact-form" action="../php_components/logInDataSource.php" method="Post">
 	
-		<label for="name">User Name</label> 
+		<label for="name">Username</label> 
 		
 		
 		<input type="text" id="unameText1" name="uname" placeholder="Enter User Name" required /><br/>
-    <label for="email">PassWord</label>
+    <label for="email">Password</label>
 	<input type="password" id="pwordTxt1" name="password" placeholder="Enter Password" required maxlength="6" /><br/>
 
 	<br/>
 	<br/>
 	
 	<div class="contact-btn">
-	<button type="submit" class="btn btn-dark" id="btnLogin" name='Login' value="Loging">LogIn</button>
+	<button type="submit" class="btn btn-dark" id="btnLoginSubmit" name='Login' value="Loging">LogIn</button>
 </div>
 	<br/>
 	
   </form>
-			
-	<!--		<form class="contact-form" method="post" id="register" action="../php_components/logInDataSource.php" method="post" >
-			<table id="tablesignup" border='0' width='550px' cellpadding='0' cellspacing='0' align='center'>
-				
-					<tr>						
-						<table border='0' width='350px' cellpadding='0' cellspacing='0' align='center'>
-							<tr>						
-								<td align='center'id="unamelable1"><strong>User Name</strong></td>
-								<td><input type="text" id="unameText1" name="uname" placeholder="Enter User Name" required /></td>
-							</tr>
-							<tr> <td>&nbsp;</td> </tr>
-							
-								<td align='center' id="pwordLable1"><strong>Password </strong></td>
-								<td><input type="password" id="pwordTxt1" name="password" placeholder="Enter Password" required maxlength="6" /></td>
-							</tr>
-							<tr> <td>&nbsp;</td> </tr>
-							
-							<tr> <td>&nbsp;</td> </tr>					
-								<table border='0' cellpadding='0' cellspacing='0' width='450px' align='center'>
-												
-						<tr>
-						<td align='center'><button type="submit" class="btn btn-dark" id="btnLogin" name='Login' value="Loging">LogIn</button>
-											
-					</tr>
-					<tr> <td>&nbsp;</td> </tr>
-					<tr> <td>&nbsp;</td> </tr>
-					</table>
-					
-		</table>
-	</table>
-	</form>-->
 	</div>					
 </div>
 </body>
@@ -106,5 +74,5 @@
     <p>&copy 2019 Pizzeria Fortuna</p></I>
 
 </footer>
-<!-- <footer></footer> -->
+
 </html>

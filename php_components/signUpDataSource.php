@@ -1,6 +1,6 @@
 <?php
 // connect to dataBase
-session_start();
+// session_start();
 $dbhost = 'localhost';
 $dbuser = 'myuser';
 $dbpass = 'mypass';
@@ -105,7 +105,7 @@ $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db_name);
 		}
 		//echo"Welcome to pizza";
 			// set session 
-			$_SESSION['uname']=$uname;	
+			// $_SESSION['uname']=$uname;	
 			//echo"<script>window.location='../php/login.php'</script>";
 			header("location:../php/welcome.php?uname=$uname");
 	}

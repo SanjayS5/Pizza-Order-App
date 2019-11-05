@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-  session_start();
+ // session_start();
    
 ?>
 <html>
@@ -74,62 +74,7 @@
 		<br/>
 
 		</form>
-			<!--<form method="post" id="register" action="../php_components/signUpDataSource.php" method="post" >
-			<table id="tablesignup" border='0' width='450px' cellpadding='0' cellspacing='0' align='center'>
-				<center>
-					<tr>						
-						<td><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;SignUp <hr/></h2></td>		
-					</tr>	
 			
-				</center>
-					<tr>						
-						<table border='0' width='550px' cellpadding='0' cellspacing='0' align='center'>
-							<tr>						
-								<td align='center'id="unamelable1"><strong>User Name</strong></td>
-								<td><input type="text" id="unameText1" name="uesname" placeholder="Enter User Name" required /></td>
-								
-							</tr>
-							<tr> <td>&nbsp;</td> </tr>
-							<tr>
-								<td align='center' id="name"><strong>Name </strong></td>
-								<td><input type="text" id="nameText1" name="name" placeholder="Enter Name" required  /></td>
-							</tr>
-							
-							<tr> <td>&nbsp;</td> </tr>
-							<tr>
-								<td align='center' id="emailLable1"><strong>Email </strong></td>
-								<td><input type="email" id="emailText1" name="email" placeholder="Enter Email" required  /></td>
-							</tr>
-							<tr> <td>&nbsp;</td> </tr>
-							<tr>
-								<td align='center' id="addrLable1"><strong>Address </strong></td>
-								<td><input type="text" id="pwordTxt1" name="address" placeholder="Enter Address" required  /></td>
-							</tr>
-							<tr> <td>&nbsp;</td> </tr>
-							<tr>
-								<td align='center' id="pwordLable1"><strong>Password </strong></td>
-								<td><input type="password" id="pwordTxt1" name="password" placeholder="Enter Password" required maxlength="6" /></td>
-							</tr>
-							<tr> <td>&nbsp;</td> </tr>
-							<tr>
-								<td align='center' id="rpwordLable1"><strong>Re-enter Password</strong></td>
-								<td><input type="password" id="rpwordTxt1" name="rpassword" placeholder="Re-enter Password" required  maxlength="6"/></td>
-							</tr>
-							<tr> <td>&nbsp;</td> </tr>					
-								<table border='0' cellpadding='0' cellspacing='0' width='450px' align='center'>
-								<tr> <td>&nbsp;</td> </tr>					
-						<tr>
-						<td align='center'><button type="submit" class="btn btn-dark" id="btnSignup" name='REGISTER' value="Register">Submit</button>
-											
-					</tr>
-					<tr> <td>&nbsp;</td> </tr>
-					<tr> <td>&nbsp;</td> </tr>
-					</table>
-					
-		</table>
-	</table>
-	</form>	-->
 	</div>				
 	</div>
 </body>
