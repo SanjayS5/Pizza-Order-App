@@ -12,7 +12,29 @@ let toppings = [];
 const addToOrder = (e) => {
     e.preventDefault();
 
-    getFormValues();
+    if (document.querySelector('input[name="pizza"]:checked') == null) {
+        alert("Please add a pizza to your order to continue.");
+        pizzaVal = "";
+        return;
+    } else {
+        pizzaVal = document.querySelector('input[name="pizza"]:checked').value;
+    }
+      
+    if (document.querySelector('input[name="base"]:checked') == null) {
+        alert("Please add a base to your order to continue.");
+        baseVal = "";
+        return;
+    } else {
+       baseVal = document.querySelector('input[name="base"]:checked').value;
+    }
+    
+    if (document.querySelectorAll('input[type="checkbox"]').checked == false) {
+        console.log("fail");
+        toppings = [];
+    } else {
+        console.log("success");
+        toppings = document.getElementsByName('topping');        
+    }
 
     let toppingsArray = new Array();
     if (toppings) {
@@ -96,6 +118,8 @@ const displayPayment = () => {
     if (orders.filter(e => e.pizza).length > 0) {
         const paymentForm = document.getElementById('payment');
         paymentForm.style.display = 'block';
+        const body = document.body;
+        body.addEventListener("submit", submitOrder);
     } else {
         alert("There are no pizzas in your order. Please add at least one to continue.");
     }
@@ -182,38 +206,8 @@ const submitOrder = (e) => {
     })
 }
 
-const body = document.body;
-body.addEventListener("submit", submitOrder);
-
 const submitOrderBtn = document.getElementById('submitOrderBtn');
 submitOrderBtn.addEventListener("click", addDetailsToOrder);
 submitOrderBtn.addEventListener("submit", submitOrder);
 
-
-const getFormValues = () => {
-
-
-    if (document.querySelector('input[name="pizza"]:checked') == null) {
-        alert("Please add a pizza to your order to continue.");
-        pizzaVal = "";
-        return;
-    } else {
-        pizzaVal = document.querySelector('input[name="pizza"]:checked').value;
-    }
-      
-    if (document.querySelector('input[name="base"]:checked') == null) {
-        alert("Please add a base to your order to continue.");
-        baseVal = "";
-        return;
-    } else {
-       baseVal = document.querySelector('input[name="base"]:checked').value;
-    }
-    
-    if (document.querySelectorAll('input[type="checkbox"]').checked == false) {
-        console.log("fail");
-        toppings = [];
-    } else {
-        console.log("success");
-        toppings = document.getElementsByName('topping');        
-    }
-}
+   
