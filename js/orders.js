@@ -117,7 +117,7 @@ const addDetailsToOrder = () => {
      let memberId = 34404;
      if (document.querySelector('#memberId') == null) {
         alert("User not logged in or failure");
-        return;
+        memberId = 0;
     } else {
         memberId = document.querySelector('#memberId').innerText;
         memberId = parseInt(memberId, 10);
