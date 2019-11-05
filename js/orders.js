@@ -114,7 +114,7 @@ const addDetailsToOrder = () => {
      const name = document.querySelector('#name').value;
      const email = document.querySelector('#email').value;
      const address = document.querySelector('#address').value;
-     let memberId = 2112;
+     let memberId = 34404;
      if (document.querySelector('#memberId') == null) {
         alert("User not logged in or failure");
         return;
@@ -184,6 +184,9 @@ const submitOrder = (e) => {
     })
 }
 
+const body = document.body;
+body.addEventListener("submit", submitOrder);
+
 const submitOrderBtn = document.getElementById('submitOrderBtn');
 submitOrderBtn.addEventListener("click", addDetailsToOrder);
-submitOrderBtn.addEventListener("click", submitOrder);
+submitOrderBtn.addEventListener("submit", submitOrder);
