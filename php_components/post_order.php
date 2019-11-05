@@ -19,9 +19,9 @@ if (isset($_POST['orders'])) {
         $address = "";
         $memberId = 0;
         foreach ($order as $item => $value) {
-            $name .= $value['name'];
-            $email .= $value['email'];
-            $address .= $value['address'];
+            $name = $value['name'];
+            $email = $value['email'];
+            $address = $value['address'];
             // $memberId .= $value['memberId'];
             $pizza = $value['pizza'];
             $baseVal = $value['base'];
