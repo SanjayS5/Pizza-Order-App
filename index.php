@@ -1,24 +1,12 @@
 <!DOCTYPE html>
-<?php/*
+<?php
   session_start();
   if(isset($__SESSION['uname'])){
    $printName=$_SESSION['uname'];
   }
-  else{
-
-  }*/
+ ?>
 
 
-?>
-
-<?php
-session_start();
-if(isset($_SESSION['uname']))
-{
-  $printuname=$_SESSION['uname'];
-  include('php_components/orderConfirmDataSource.php');
-  $memberId=getMemberIdByUserName($_SESSION['uname']);
- }?>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -57,9 +45,6 @@ if(isset($_SESSION['uname']))
 		      	<button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn place-order bg-dark">Logout</button>
 		  </form>
     </li>
-
-
-
 	<?php } else { ?>
 	  <li class="nav-item active">
           <a class="nav-link" href="php/login.php">Login</a>
