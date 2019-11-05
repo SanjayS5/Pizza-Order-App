@@ -114,12 +114,22 @@ const addDetailsToOrder = () => {
      const name = document.querySelector('#name').value;
      const email = document.querySelector('#email').value;
      const address = document.querySelector('#address').value;
+     let memberId = 2112;
+     if (document.querySelector('#memberId') == null) {
+        alert("User not logged in or failure");
+        return;
+    } else {
+        memberId = document.querySelector('#memberId').innerText;
+        memberId = parseInt(memberId, 10);
+        console.log(memberId);
+    }
+     
     
      orders.forEach((element, index, array) => {
          element.name = name;
          element.email = email;
          element.address = address;
-         element.memberId = 0;
+         element.memberId = memberId;
      })
 
      console.log("LOGGING ADDED PROPS");
@@ -169,6 +179,7 @@ const submitOrder = (e) => {
         data: { orders: JSON.stringify(orders) },
         success: function (res) {
             console.log(res);
+            window.location = "orderConfirmation.php";
         }
     })
 }
