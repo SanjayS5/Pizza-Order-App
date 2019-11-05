@@ -17,12 +17,7 @@ if(isset($_SESSION['uname']))
 		
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<<<<<<< HEAD
   <a class="navbar-brand" href="../index.php">Pizzeria Fortuna</a>
-=======
-<!-- <img src="../assets/img/pizzaLogo.jpg" alt="pizza" height="42" width="42"> -->
-  <a class="navbar-brand" href="#">Pizzeria Fortuna</a>
->>>>>>> fixed with session and getpost
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
