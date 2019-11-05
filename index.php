@@ -8,7 +8,7 @@
 
   }*/
 
-  
+
 ?>
 
 <?php
@@ -30,8 +30,7 @@ if(isset($_SESSION['uname']))
   <title>Document</title>
 </head>
 <header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<img src="assets/img/pizzaLogo.jpg" alt="pizza" height="42" width="42">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
   <a class="navbar-brand" href="#">Pizzeria Fortuna</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -56,14 +55,14 @@ if(isset($_SESSION['uname']))
     <li class="nav-item active">
        <form method='post' action='php_components/logOutDataSource.php' >
 		      	<button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn place-order bg-dark">Logout</button>
-		  </form>	
+		  </form>
     </li>
-    
-     
-     
+
+
+
 	<?php } else { ?>
 	  <li class="nav-item active">
-          <a class="nav-link" href="php/login.php">Login</a>  
+          <a class="nav-link" href="php/login.php">Login</a>
 	  </li>
 	  <li class="nav-item active">
       <a class="nav-link" href="php/signUp.php">Register</a>
@@ -149,12 +148,4 @@ if(isset($_SESSION['uname']))
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-<footer class="footer mt-auto py-3 navbar-dark">
-  <div class="container">
-    <p>Address: 5, Napoli Street, Wellington 6011</p>
-    <span>Email: pizzeriafortuna@mail.com</span>
-    <span>Phone: 1800-834-5683</span>
-    <p>&copy 2019 Pizzeria Fortuna</p>
-  </div>
-</footer>
 </html>

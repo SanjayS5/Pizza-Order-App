@@ -18,7 +18,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item active">
-          <a class="nav-link" href="php\login.php">Login</a>          
+          <a class="nav-link" href="php\login.php">Login</a>
       </li>
       <li class="nav-item active">
       <a class="nav-link" href="php\signUp.php">Register</a>
