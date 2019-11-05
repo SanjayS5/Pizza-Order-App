@@ -27,6 +27,7 @@ if(isset($_SESSION['uname']))
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/order_style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="https://kit.fontawesome.com/bdfac7b89e.js" crossorigin="anonymous"></script>
     <title>Pizzeria Fortuna</title>
 </head>
@@ -79,11 +80,12 @@ if(isset($_SESSION['uname']))
     <?php include "../php_components/check_ingredients.php" ?>
     <div class="container">
         <h1>Place Order</h1>
+        <div class="space"></div>
         <form action="../php_components/process_order.php" method="POST">
 
             <div>
                 <p class="my-3"></p>
-                <h2>Select Your Pizza</h2>
+                <h2>Step 1: Select Your Pizza</h2>
                 <p class="my-3"></p>
             </div>
             <div class="row" id="selectPizza">
@@ -144,7 +146,7 @@ if(isset($_SESSION['uname']))
 
             <div>
                 <p class="my-3"></p>
-                <h2>Select Pizza Base</h2>
+                <h2>Step 2: Select Pizza Base</h2>
                 <p class="my-3"></p>
             </div>
             <div class="row" id="selectBase">
@@ -178,7 +180,7 @@ if(isset($_SESSION['uname']))
     <div class="container">
         <div>
             <p class="my-3"></p>
-            <h2>Select Toppings</h2>
+            <h2>Step 3: Select Toppings</h2>
             <p class="my-3"></p>
         </div>
         <div class="row">
@@ -282,8 +284,8 @@ if(isset($_SESSION['uname']))
             <style>
                 #payment {
                     display: none;
-                    background: #efefef;
-                    border: 1px solid black;
+                    background: black;
+                    border: 1px solid yellow;
                     width: 100%;
                     height: 100%;
                 }

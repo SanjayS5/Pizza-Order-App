@@ -114,7 +114,7 @@ const addDetailsToOrder = () => {
      const name = document.querySelector('#name').value;
      const email = document.querySelector('#email').value;
      const address = document.querySelector('#address').value;
-     let memberId = 2112;
+     let memberId = 34404;
      if (document.querySelector('#memberId') == null) {
         alert("User not logged in or failure");
         return;
