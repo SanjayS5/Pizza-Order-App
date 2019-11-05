@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<?php
+<!-- <?php
   session_start();
   if(isset($__SESSION['uname'])){
    $printName=$_SESSION['uname'];
   }
-?>
+?> -->
 <html>
 
 <head>
@@ -39,16 +39,17 @@
 </header>
 
 <body >
-  <?php/*
+  <?php
 	$userName=$_GET['uname'];
-	//$userName = 'dharani';*/
+	//$userName = 'dharani';
 	?>
 
   <div class="container">
     <div class="register">
       <center>
-        <h5>Awesome! <?=$_SESSION['uname']?></h5>
-        <h1>Thank for resgistering</h1>
+      <h5>Awesome,  <?=	$userName?>!</h5>
+        <!-- <h5>Awesome!  <?=$_SESSION['uname']?></h5> -->
+        <h1>Thank you for registering</h1>
         <hr>
         <h4>You have been succesfully registered</h4>
         <p class="registered-desc">Your new account details have been sent to the email address that you used during the registration process.</p>
