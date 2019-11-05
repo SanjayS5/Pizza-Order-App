@@ -63,6 +63,7 @@ const addToOrder = (e) => {
     let displayOrder = document.querySelector('#display');
     const orderList = document.querySelector('#orderList');
     const li = document.createElement("li");
+    li.setAttribute("id", "1");
     let orderText = "";
     let toppingsString = "";
     // for (const [topping, value] of order.topping) {
@@ -76,8 +77,20 @@ const addToOrder = (e) => {
 
     li.innerText = orderText.concat(order.pizza, ", ", order.base, ", ", toppingsString);
     orderList.appendChild(li);
+    const deleteBtn = document.createElement('button');
+    deleteBtn.addEventListener("click", deleteOrder);
+    deleteBtn.innerHTML = `<i class="fas fa-times"></i>`;
+    deleteBtn.style.background = "none";
+    deleteBtn.style.border = "none";
+    li.appendChild(deleteBtn);
 
     // displayOrder.textContent = JSON.stringify(orders);
+}
+
+const deleteOrder = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    console.log(e.target.parentElement);
 }
 
 const displayPayment = () => {
