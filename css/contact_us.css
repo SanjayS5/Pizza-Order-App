@@ -1,0 +1,105 @@
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+.containcontact-form{
+    margin: 60px 0px;
+}
+
+.containcontact-form label{
+    width: 60px;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type=password], select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=email], select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+  
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+  
+.container {
+    border-radius: 5px;
+    /* background-color: #f2f2f2; */
+    width: 38%;
+    padding: 60px;
+}
+
+.contact-btn{
+    text-align: center;
+    margin: 0 auto;
+}
+.container h1{
+    text-align: center;
+}
+.header-line{
+    text-align: center;
+}
+.header-line hr{
+    width: 100%;
+    border: 1px solid  #fff;
+    margin: 20px 0px;
+    margin: 0 auto;
+    margin-top: 50px;
+}  
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+  
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+      width: 55%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+      width: 70%;
+    }
+} 
+
+@media only screen and (max-width: 500px) {
+    .container {
+      width: 80%;
+    }
+}
+
+hr{
+    width: 100%;
+    border: 1px solid  #fff;
+    margin: 20px 0px;
+}
+
+#btnSignup{
+     
+    width:200px;
+}

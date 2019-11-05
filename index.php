@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+<?php/*
+  session_start();
+  if(isset($__SESSION['uname'])){
+   $printName=$_SESSION['uname'];
+  }
+  else{
+
+  }*/
+
+  
+?>
+
+<?php
+session_start();
+if(isset($_SESSION['uname']))
+{
+  $printuname=$_SESSION['uname'];
+  include('php_components/orderConfirmDataSource.php');
+  $memberId=getMemberIdByUserName($_SESSION['uname']);
+ }?>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,9 +30,49 @@
   <title>Document</title>
 </head>
 <header>
- <?php include 'php_components/navbar.php'?>
-</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<img src="assets/img/pizzaLogo.jpg" alt="pizza" height="42" width="42">
+  <a class="navbar-brand" href="#">Pizzeria Fortuna</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="php/order_page.php">Order</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="php/contactUs.php">Contact Us</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+  <?php if (isset($_SESSION['uname'])) { ?>
+   <!-- <li class="nav-link active"> your memberID:: <?=$memberId?></li>-->
+     <li class="nav-link active"> Hi <?=$_SESSION['uname']?></li>
+    <li class="nav-item active">
+       <form method='post' action='php_components/logOutDataSource.php' >
+		      	<button type="submit"  id="btnlogout" name='Logout' value="Logout" class="btn place-order bg-dark">Logout</button>
+		  </form>	
+    </li>
+    
+     
+     
+	<?php } else { ?>
+	  <li class="nav-item active">
+          <a class="nav-link" href="php/login.php">Login</a>  
+	  </li>
+	  <li class="nav-item active">
+      <a class="nav-link" href="php/signUp.php">Register</a>
+      </li>
+	  <?php } ?>
+        </ul>
+  </div>
+</nav>
+</header>
 <body>
 
   <div class="row main-top justify-content-center align-items-center">

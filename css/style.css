@@ -3,3 +3,27 @@
 /* .footer {
     background: grey;
 } */
+.jumbotron {
+    background-image: url("../assets/img/jumbotron_bg.jpg");
+    
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    color: white
+  }
+  input[type=text], select, textarea {
+    width: 40%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  #btncontact{
+     
+      width:200px;
+  }
+ 
