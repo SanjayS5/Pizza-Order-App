@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<?php
+<?php/*
   session_start();
   if(isset($__SESSION['uname'])){
    $printName=$_SESSION['uname'];
   }
   else{
 
-  }
+  }*/
+
   
 ?>
+
+<?php
+session_start();
+if(isset($_SESSION['uname']))
+{
+  $printuname=$_SESSION['uname'];
+  include('php_components/orderConfirmDataSource.php');
+  $memberId=getMemberIdByUserName($_SESSION['uname']);
+ }?>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -40,7 +50,8 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-	<?php if (isset($_SESSION['uname'])) { ?>
+  <?php if (isset($_SESSION['uname'])) { ?>
+   <!-- <li class="nav-link active"> your memberID:: <?=$memberId?></li>-->
      <li class="nav-link active"> Hi <?=$_SESSION['uname']?></li>
     <li class="nav-item active">
        <form method='post' action='php_components/logOutDataSource.php' >

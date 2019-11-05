@@ -37,6 +37,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
 	<?php if (isset($_SESSION['uname'])) { ?>
+		
      <li class="nav-link active"> Hi <?=$_SESSION['uname']?></li>
     <li class="nav-item active">
        <form method='post' action='../php_components/logOutDataSource.php' >
@@ -68,7 +69,7 @@
 	
 	<div>
 		
-	<form class="contact-form" action="../php_components/contactDataSource.php" method="Post">
+	<form class="contact-form" ><!--action="../php_components/contactDataSource.php" method="Post">-->
 	
 		<label for="name">Name</label> 
 		
@@ -93,10 +94,30 @@
 	<br/>
 	
   </form>
+  <span id="error_message" style="display:none;">Some thing want worng please Re-enter your deatails</span>
+  <span id="success_message" style="display:none;">ThankYou we will get back to you assp</span>
+			
+  <?php
+	if(isset($_POST["submit"]))
+	{
+		include('../php_components/contactDataSource.php');
+		$printMsg=store_record_into_contactTable();
+		if($printMsg==0){?>
+			<script>
+			  document.getElementById("error_message").style.display= 'visible';
+			  </script>
+		<?php}
+  		else{?>
+			<script>
+			document.getElementById("success_message").style.display= 'visible';
+			</script>
+		<?php	}
+			}?>
+   
+ 
+  <!--<span id="error_message" class="text-danger"> </span>
 
-  <span id="error_message" class="text-danger"> </span>
-
-  <span id="success_message" class="text-success"> </span>
+  <span id="success_message" class="text-success"> </span>-->
 
 
   <?php/*
@@ -127,8 +148,7 @@
 		}*/
 		
  
-	}
-?>
+	
 		
 		<!--<form action="../php_components/contactDataSource.php" method="post">
 			<table class="contactTable" width:1000px>					

@@ -1,53 +1,63 @@
 <?php
-
 session_start();
 if(isset($_SESSION['uname']))
 {
   $uname=$_SESSION['uname'];
 }
 
-$dbhost = 'localhost';
-$dbuser = 'myuser';
-$dbpass = 'mypass';
-$db_name = 'pizzadb';
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db_name);
-	if(! $conn ) {
-    echo"not Connected";
-            die('Could not connect: ' . mysqli_error());
-      }
-    else
-	{
-    echo"Connected";
-    $name = $_POST['user_name'];	
-		$email = $_POST['user_mail'];
-		$phone = $_POST['user_phone'];
-    $message=$_POST['user_message'];
-    // insert to member table
-    try{
-			$query = $conn->prepare("INSERT INTO contactUs (name , email, phone,message) VALUES (?, ?, ?,?);");
-      $query->bind_param("ssss", $name,$email, $phone, $message); 
-      $query->execute();
-      echo"inserted";
-				//echo "Record is inserted into member table-succefully";
-        $result = $query->get_result();
-        print_r($result);
-         echo"<script>window.location='../php/contactUs.php'</script>";	
+// method to store the details into contact table and enable enable <spam> tag content
+function store_record_into_contactTable()
+{
+  $dbhost = 'localhost';
+  $dbuser = 'myuser';
+  $dbpass = 'mypass';
+  $db_name = 'pizzadb';
+  $printFlag=0;
+  $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db_name);
+    if(! $conn ) {
+      echo"not Connected";
+      return $printFlag;
+              die('Could not connect: ' . mysqli_error());
+              
+        }
+      else
+    {
+      echo"Connected";
+      $name = $_POST['user_name'];	
+      $email = $_POST['user_mail'];
+      $phone = $_POST['user_phone'];
+      $message=$_POST['user_message'];
+      // insert to member table
+      try{
+        $query = $conn->prepare("INSERT INTO contactUs (name , email, phone,message) VALUES (?, ?, ?,?);");
+        $query->bind_param("ssss", $name,$email, $phone, $message); 
+        $query->execute();
+        echo"inserted";
+          //echo "Record is inserted into member table-succefully";
+          $result = $query->get_result();
+          $printFlag++;
+          return $printFlag;
+         // print_r($result);
+        // document.getElementById('success_message').style.display = 'inline';
+          // echo"<script>
+           
+         //  window.location='../php/contactUs.php'
+         //  </script>";	
+           
          
+        } catch(Exception $e){ 
+          return $printFlag;
+          echo"not inserted";
+          echo "<script type='text/javascript'>alert('Enter details again');</script>";
+          echo"<script>window.location='../php/contactUs.php'
+              </script>";	
+          die( "ERROR: Could not able to execute update the member table with custid. "  
+                          . mysqli_error($conn)); 
+          }  	
        
-      } catch(Exception $e){ 
-        echo"not inserted";
-        echo "<script type='text/javascript'>alert('Enter details again');</script>";
-				echo"<script>window.location='../php/contactUs.php'
-						</script>";	
-        die( "ERROR: Could not able to execute update the member table with custid. "  
-                        . mysqli_error($conn)); 
-        }  	
-     
+  }  
 }
 
-
-		
-    
 
 
 //require '../phpmailer/PHPMailerAutoload.php';
