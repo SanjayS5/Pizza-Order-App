@@ -17,7 +17,7 @@ if(isset($_SESSION['uname']))
 		
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Pizzeria Fortuna</a>
+  <a class="navbar-brand" href="../index.php">Pizzeria Fortuna</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -110,7 +110,8 @@ if(isset($_SESSION['uname']))
 							
 		</table>
 		<br/><br/>
-		<h5> Christmas offers are coming soon, stay in touch</h5>
+		<p>Check your mailbox! We've emailed your order details to you for your convenience.</p>
+		<p>We hope you enjoy your meal!</p>
 	</I>
 	</centre>
 		<!--<h1>Your Order number is  <?=$orderId?></h1>

@@ -12,7 +12,7 @@ if (isset($_POST['orders'])) {
     if (json_last_error() == JSON_ERROR_NONE) {
         $newOrder = "";
         $base = "";
-        $status = "Waiting";
+        $status = "Received";
         $name = "";
         $email = "";
         $address = "";

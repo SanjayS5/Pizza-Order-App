@@ -6,7 +6,7 @@ if(isset($_SESSION['uname'])){ // if session is set then distroy the session
 	unset($_SESSION);
 	session_destroy();
 	session_write_close();
-	header("location:../index.php");// change to index.php
+	header("Location:../index.php");// change to index.php
 	//exit; // or use die;	
 }
 //else{

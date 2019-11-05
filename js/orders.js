@@ -3,7 +3,7 @@ const orderBtn = document.getElementById("addOrderBtn");
 const confirmOrderBtn = document.getElementById("nextBtn");
 
 let orders = [];
-
+let listItemId = 0;
 const addToOrder = (e) => {
     e.preventDefault();
 
@@ -50,6 +50,7 @@ const addToOrder = (e) => {
     
 
     let order = {
+        id: listItemId,
         pizza: pizzaVal,
         base: baseVal,
         topping: toppingsArray,
@@ -64,7 +65,7 @@ const addToOrder = (e) => {
     let displayOrder = document.querySelector('#display');
     const orderList = document.querySelector('#orderList');
     const li = document.createElement("li");
-    li.setAttribute("id", "1");
+    li.setAttribute("id", listItemId);
     let orderText = "";
     let toppingsString = "";
     // for (const [topping, value] of order.topping) {
@@ -79,19 +80,36 @@ const addToOrder = (e) => {
     li.innerText = orderText.concat(order.pizza, ", ", order.base, ", ", toppingsString);
     orderList.appendChild(li);
     const deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute("id", listItemId);
     deleteBtn.addEventListener("click", deleteOrder);
     deleteBtn.innerHTML = `<i class="fas fa-times"></i>`;
     deleteBtn.style.background = "none";
     deleteBtn.style.border = "none";
     li.appendChild(deleteBtn);
 
+    listItemId++;
     // displayOrder.textContent = JSON.stringify(orders);
 }
 
 const deleteOrder = (e) => {
     e.preventDefault();
-    console.log(e.target);
-    console.log(e.target.parentElement);
+    console.log("LOOK AT MEEEEE");
+    const orderId = e.target.parentElement.id;
+    console.log("Id to be removed");
+    console.log(orders[orderId]);
+    let index = 0;
+    orders.forEach(function(element){
+        if (element.id == orderId) {
+            index = orders.findIndex(element => element.id === orderId);
+        }
+    });
+    console.log(index);
+    orders.splice(index, 1);
+    // orders.splice(orderId, 1);
+    document.getElementById(orderId).remove();
+    orders.forEach(function(element){
+        console.log(element);
+    });
 }
 
 const displayPayment = () => {
@@ -117,7 +135,6 @@ const addDetailsToOrder = () => {
      const address = document.querySelector('#address').value;
      let memberId = 34404;
      if (document.querySelector('#memberId') == null) {
-        alert("User not logged in or failure");
         memberId = 0;
     } else {
         memberId = document.querySelector('#memberId').innerText;
