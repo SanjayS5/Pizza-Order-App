@@ -29,7 +29,7 @@
     background-position: center;
     background-attachment: fixed;
     margin: 0 auto;
-    height: 800px;
+    height: 750px;
 }
 
 .page-header{
@@ -94,6 +94,9 @@
 }
 .our-story .describe-story h2{
   margin-bottom: 30px;
+}
+.our-story h2{
+  text-align: center;
 }
 /* footer{
   text-align: center;
