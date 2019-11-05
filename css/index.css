@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 
-body{
-  background-color: #000;
-  color: #fff;
-}
 .btn{
   color: #fff;
 }
@@ -18,32 +14,64 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     margin: 0 auto;
-    height: 700px;
+    height: 800px;
+}
+
+.main-bottom{
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),url("../assets/img/ourStory.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0 auto;
+    height: 800px;
 }
 
 .page-header{
   text-align: center;
 }
+
 .page-header h1{
   font-family: 'Permanent Marker', cursive;
   font-size: 90px;
 }
+.page-header h4{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
+}
 .page-header .place-order{
   font-size: 20px;
 }
-
-.our-story{
+.page-header button,
+.our-story button{
+  margin-top: 20px;
+  text-transform: uppercase;
+  border: 1px solid #ddd;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.page-header button:hover,
+.our-story button:hover{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.our-menu{
   text-align: center;
   margin: 0 auto;
   padding: 70px 0px;
 }
+.our-menu h2,
 .our-story h2{
   font-family: 'Permanent Marker', cursive;
   font-size: 50px;
 }
-
-.image-story img{
+.describe-story{
+  text-align: justify;
+}
+.image-menu img{
   width: 50%;
   border-radius: 5px;
   margin: 30px 0px;
@@ -55,7 +83,51 @@ body{
 .describe-story p{
   margin-bottom: 30px;
 }
-footer{
+.our-story-form{
+  text-align: right;
+}
+.our-story .describe-story{
+  width: 60%;
+  padding: 40px 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+.our-story .describe-story h2{
+  margin-bottom: 30px;
+}
+/* footer{
   text-align: center;
-  margin: 0 auto;
+} */
+
+@media only screen and (max-device-width: 1366px) {
+  .main-top {
+    background-attachment: scroll;
+  }
+  .main-bottom {
+    background-attachment: scroll;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .our-story .describe-story{
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .page-header{
+    margin-top: 120px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .page-header h1{
+    font-size: 70px;
+  }
+  .page-header h4{
+    font-size: 20px;
+  }
+  .describe-story-bottom{
+    display: none;
+  }
 }

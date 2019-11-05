@@ -1,29 +1,46 @@
-/* Create colour vars */
+@import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Mansalva&display=swap');
+body{
+  background-color: #000;
+  color: #fff;
+}
+.navbar-brand{
+  font-family: 'Mansalva', cursive;
+  font-size: 30px;
+}
+.nav-item a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
 
-/* .footer {
-    background: grey;
-} */
-.jumbotron {
-    background-image: url("../assets/img/jumbotron_bg.jpg");
-    
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
-    color: white
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+.nav-item a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.nav-item a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+footer{
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  nav {
+    background-color: #000;
   }
-  input[type=text], select, textarea {
-    width: 40%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
-  #btncontact{
-     
-      width:200px;
-  }
- 
+}
+
