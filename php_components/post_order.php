@@ -1,9 +1,5 @@
 <?php
 
-//create customer first
-//create order
-//pass customer id to order
-
 if (isset($_POST['orders'])) {
     print_r($_POST);
     echo "complete";
@@ -12,7 +8,7 @@ if (isset($_POST['orders'])) {
     if (json_last_error() == JSON_ERROR_NONE) {
         $newOrder = "";
         $base = "";
-        $status = "Received";
+        $status = "Waiting";
         $name = "";
         $email = "";
         $address = "";
@@ -32,7 +28,7 @@ if (isset($_POST['orders'])) {
                     $toppings .= "+$topping,";
                 }
             }
-            $newOrder .= "$pizza, $toppings";
+            $newOrder .= "$pizza,$toppings";
             updateIngredients($toppingsArray);
         }
         insertOrder($newOrder, $base, $status, getCustomerId());
@@ -102,7 +98,7 @@ function updateIngredients($toppingsArray)
             }
         }
     } else {
-        echo "FAIL update";
+        echo "Fail update";
     }
 }
 
@@ -134,7 +130,7 @@ function insertCustomer($name, $address, $memberId)
             echo $error;
         }
     } else {
-        echo "FAIL insert";
+        echo "Fail insert";
     }
 }
 
