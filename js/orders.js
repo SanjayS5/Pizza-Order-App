@@ -184,6 +184,9 @@ const submitOrder = (e) => {
     })
 }
 
+const body = document.body;
+body.addEventListener("submit", submitOrder);
+
 const submitOrderBtn = document.getElementById('submitOrderBtn');
 submitOrderBtn.addEventListener("click", addDetailsToOrder);
-submitOrderBtn.addEventListener("click", submitOrder);
+submitOrderBtn.addEventListener("submit", submitOrder);
