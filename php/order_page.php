@@ -275,6 +275,9 @@ if(isset($_SESSION['uname']))
         <div id="display">
         <h3>Order Details</h3>
             <ul id="orderList"></ul>
+            <div id="priceDisplay">
+                <p id="priceText">Current order total: $0</p>
+            </div>
         </div>
         <div>
             

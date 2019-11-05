@@ -3,58 +3,32 @@ const orderBtn = document.getElementById("addOrderBtn");
 const confirmOrderBtn = document.getElementById("nextBtn");
 
 let orders = [];
+let listItemId = 0;
+let price = 0;
+let pizzaVal = "";
+let baseVal = "";
+let toppings = [];
 
 const addToOrder = (e) => {
     e.preventDefault();
 
-    let pizzaVal = "";
-    let baseVal = "";
-    let toppings = [];
+    getFormValues();
 
-    // TODO check if these are not null. Optional elements
-    if (document.querySelector('input[name="pizza"]:checked') == null) {
-        alert("Please add a pizza to your order to continue.");
-        pizzaVal = "";
-        return;
-    } else {
-        pizzaVal = document.querySelector('input[name="pizza"]:checked').value;
-    }
-      
-    if (document.querySelector('input[name="base"]:checked') == null) {
-        alert("Please add a base to your order to continue.");
-        baseVal = "";
-        return;
-    } else {
-       baseVal = document.querySelector('input[name="base"]:checked').value;
-    }
-    
-    if (document.querySelectorAll('input[type="checkbox"]').checked == false) {
-        console.log("fail");
-        toppings = [];
-    } else {
-        console.log("success");
-        toppings = document.getElementsByName('topping');        
-    }
-    // toppings = document.getElementsByName('input[name="topping"]:checked').value; 
-
-    let vals = "";
     let toppingsArray = new Array();
     if (toppings) {
         for (let i = 0; i < toppings.length; i++) {
             if (toppings[i].checked) {
-                // vals += "," + toppings[i].value;
                 toppingsArray.push(setAmount(toppings[i].value));
             }
         }
     }
     
-
     let order = {
+        id: listItemId,
         pizza: pizzaVal,
         base: baseVal,
         topping: toppingsArray,
-        // email: "a",
-        // address: "a",
+        price: 10,
     }
 
     orders.push(order);
@@ -64,12 +38,10 @@ const addToOrder = (e) => {
     let displayOrder = document.querySelector('#display');
     const orderList = document.querySelector('#orderList');
     const li = document.createElement("li");
-    li.setAttribute("id", "1");
+    li.setAttribute("id", listItemId);
     let orderText = "";
     let toppingsString = "";
-    // for (const [topping, value] of order.topping) {
-    //     console.log(topping);
-    // }
+
     order.topping.forEach(function (element) {
         Object.keys(element).forEach(key => {
             toppingsString += key + " ";
@@ -79,19 +51,45 @@ const addToOrder = (e) => {
     li.innerText = orderText.concat(order.pizza, ", ", order.base, ", ", toppingsString);
     orderList.appendChild(li);
     const deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute("id", listItemId);
     deleteBtn.addEventListener("click", deleteOrder);
     deleteBtn.innerHTML = `<i class="fas fa-times"></i>`;
     deleteBtn.style.background = "none";
     deleteBtn.style.border = "none";
     li.appendChild(deleteBtn);
+    displayPrice();
 
-    // displayOrder.textContent = JSON.stringify(orders);
+    listItemId++;
+}
+
+const displayPrice = () => {
+    const priceText = document.getElementById('priceText');
+    price += orders[0].price;
+    priceText.innerText = "Order total: $" + price;
 }
 
 const deleteOrder = (e) => {
     e.preventDefault();
-    console.log(e.target);
-    console.log(e.target.parentElement);
+    console.log("LOOK AT MEEEEE");
+    const orderId = e.target.parentElement.id;
+    console.log("Id to be removed");
+    console.log(orderId);
+    console.log(" ");
+    let index = 0;
+    orders.forEach(function(element){
+        if (element.id == orderId) {
+            index = orders.findIndex(element => element.id == orderId);
+            console.log("id found at index " + index);
+        }
+    });
+    console.log(index);
+    orders.splice(index, 1);
+    document.getElementById(orderId).remove();
+    orders.forEach(function(element){
+        console.log(element);
+    });
+    price -= 10;
+    document.getElementById('priceText').innerText = "Order total: $" + price;
 }
 
 const displayPayment = () => {
@@ -117,7 +115,6 @@ const addDetailsToOrder = () => {
      const address = document.querySelector('#address').value;
      let memberId = 34404;
      if (document.querySelector('#memberId') == null) {
-        alert("User not logged in or failure");
         memberId = 0;
     } else {
         memberId = document.querySelector('#memberId').innerText;
@@ -191,3 +188,32 @@ body.addEventListener("submit", submitOrder);
 const submitOrderBtn = document.getElementById('submitOrderBtn');
 submitOrderBtn.addEventListener("click", addDetailsToOrder);
 submitOrderBtn.addEventListener("submit", submitOrder);
+
+
+const getFormValues = () => {
+
+
+    if (document.querySelector('input[name="pizza"]:checked') == null) {
+        alert("Please add a pizza to your order to continue.");
+        pizzaVal = "";
+        return;
+    } else {
+        pizzaVal = document.querySelector('input[name="pizza"]:checked').value;
+    }
+      
+    if (document.querySelector('input[name="base"]:checked') == null) {
+        alert("Please add a base to your order to continue.");
+        baseVal = "";
+        return;
+    } else {
+       baseVal = document.querySelector('input[name="base"]:checked').value;
+    }
+    
+    if (document.querySelectorAll('input[type="checkbox"]').checked == false) {
+        console.log("fail");
+        toppings = [];
+    } else {
+        console.log("success");
+        toppings = document.getElementsByName('topping');        
+    }
+}
