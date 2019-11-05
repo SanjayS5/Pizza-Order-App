@@ -131,4 +131,15 @@ if(isset($_SESSION['uname']))
 	
 </div>
 </body>
+<footer class="footer mt-auto py-3 navbar-dark bg-dark" width=100%>
+  
+    <center><I>
+        <p>Address: 5, Napoli Street, Wellington 6011</p>
+        <span>Email: pizzeriafortuna@mail.com</span>
+        <span>Phone: 1800-834-5683</span>
+        <p>&copy 2019 Pizzeria Fortuna</p>
+      </I>
+    </center></I>
+  
+</footer>
 </html>

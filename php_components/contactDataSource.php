@@ -1,6 +1,10 @@
 <?php
 
 session_start();
+if(isset($_SESSION['uname']))
+{
+  $uname=$_SESSION['uname'];
+}
 
 $dbhost = 'localhost';
 $dbuser = 'myuser';
@@ -20,14 +24,15 @@ $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db_name);
     $message=$_POST['user_message'];
     // insert to member table
     try{
-			$query = $conn->prepare("INSERT INTO contactUs (name , email, phone,message, ) VALUES (?, ?, ?,?);");
+			$query = $conn->prepare("INSERT INTO contactUs (name , email, phone,message) VALUES (?, ?, ?,?);");
       $query->bind_param("ssss", $name,$email, $phone, $message); 
       $query->execute();
       echo"inserted";
 				//echo "Record is inserted into member table-succefully";
         $result = $query->get_result();
         print_r($result);
-       	echo"<script>window.location='../php/contactUs.php'</script>";	
+         echo"<script>window.location='../php/contactUs.php'</script>";	
+         
        
       } catch(Exception $e){ 
         echo"not inserted";

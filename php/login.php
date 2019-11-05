@@ -5,8 +5,9 @@
 <title>Login</title>
 	<!-- Style-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  	  <link rel="stylesheet" type="text/css" href="css/index.css">
-	  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  	  <link rel="stylesheet" type="text/css" href="../css/index.css">
+	  
+	  <link rel="stylesheet" type="text/css" href="../css/contact_us.css">
 	
 </head>
 <header>
@@ -30,9 +31,7 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item active">
-          <a class="nav-link" href="login.php">Login</a>          
-      </li>
+     
       <li class="nav-item active">
       <a class="nav-link" href="signUp.php">Register</a>
       </li>
@@ -42,13 +41,32 @@
 
 </header>
 <body style="background-color:black; color: white">
-	<div class="container">
-		
+	<div class="container">		
 		<div class="register">
 		<br/>	<br/>	<br/> 
-			<center><H1>Login</H1></center>
-			<br/>	<br/>
-			<form method="post" id="register" action="../php_components/logInDataSource.php" method="post" >
+			<h1>Login</h1>
+			<br/>
+			
+			<form class="contact-form" action="../php_components/logInDataSource.php" method="Post">
+	
+		<label for="name">User Name</label> 
+		
+		
+		<input type="text" id="unameText1" name="uname" placeholder="Enter User Name" required /><br/>
+    <label for="email">PassWord</label>
+	<input type="password" id="pwordTxt1" name="password" placeholder="Enter Password" required maxlength="6" /><br/>
+
+	<br/>
+	<br/>
+	
+	<div class="contact-btn">
+	<button type="submit" class="btn btn-dark" id="btnLogin" name='Login' value="Loging">LogIn</button>
+</div>
+	<br/>
+	
+  </form>
+			
+	<!--		<form class="contact-form" method="post" id="register" action="../php_components/logInDataSource.php" method="post" >
 			<table id="tablesignup" border='0' width='550px' cellpadding='0' cellspacing='0' align='center'>
 				
 					<tr>						
@@ -77,17 +95,17 @@
 					
 		</table>
 	</table>
-	</form>					
-	</div>
+	</form>-->
+	</div>					
+</div>
 </body>
-<footer class="footer mt-auto py-3 navbar-dark bg-dark" width=100%>
-  <div class="container">
-  <center><I>
+<footer class="container-fluid footer mt-auto py-3 navbar-dark bg-dark" width=100%>
+
     <p>Address: 5, Napoli Street, Wellington 6011</p>
     <span>Email: pizzeriafortuna@mail.com</span>
     <span>Phone: 1800-834-5683</span>
     <p>&copy 2019 Pizzeria Fortuna</p></I>
-</center>
-  </div>
+
 </footer>
+<!-- <footer></footer> -->
 </html>

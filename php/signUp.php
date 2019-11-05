@@ -5,11 +5,11 @@
 ?>
 <html>
 <head>
-<title>Sign Up</title>
+<title>Register</title>
 	<!-- Style-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/contact_us.css">
 	
 </head>
 <header>
@@ -41,10 +41,41 @@
 </nav>
 </header>
 <body  style="background-color:black; color: white">
-	<div class="container">
-		
+	<div class="container">		
 		<div class="register">
-			<form method="post" id="register" action="../php_components/signUpDataSource.php" method="post" >
+		<center>		<h2>Register </h2>	
+		<hr/>	
+		</center>
+		<form class="contact-form" action="../php_components/signUpDataSource.php" method="Post">
+			<label for="name">User Name</label> 	
+			<input type="text" id="unameText1" name="uesname" placeholder="Enter User Name" required /><br/>
+			
+			<label for="name">Name</label> 	
+			<input type="text" id="nameText1" name="name" placeholder="Enter Name" required  /><br/>
+			
+			<label for="email">Email</label>
+			<input type="email" id="emailText1" name="email" placeholder="Enter Email" required  /><br/>
+			
+			<label for="name">Address</label> 	
+			<input type="text" id="addtext" name="address" placeholder="Enter Address" required  /><br/>
+
+			<label for="email">Password</label>
+			<input type="password" id="pwordTxt1" name="password" placeholder="Enter Password" required maxlength="6" />
+			<br/>
+			<label for="name">Re-enter Password</label> 	
+			<input type="password" id="rpwordTxt1" name="rpassword" placeholder="Re-enter Password" required  maxlength="6"/>
+			<br/>
+			
+			
+			<br/><br/>
+
+		<div class="contact-btn">
+		<button type="submit" class="btn btn-dark" id="btnSignup" name='submit' value="Register">Submit</button>	
+		</div>
+		<br/>
+
+		</form>
+			<!--<form method="post" id="register" action="../php_components/signUpDataSource.php" method="post" >
 			<table id="tablesignup" border='0' width='450px' cellpadding='0' cellspacing='0' align='center'>
 				<center>
 					<tr>						
@@ -91,7 +122,7 @@
 								<tr> <td>&nbsp;</td> </tr>					
 						<tr>
 						<td align='center'><button type="submit" class="btn btn-dark" id="btnSignup" name='REGISTER' value="Register">Submit</button>
-											<!--<input type='submit' id="btnSignup" name='REGISTER' value="Register" >--></td>
+											
 					</tr>
 					<tr> <td>&nbsp;</td> </tr>
 					<tr> <td>&nbsp;</td> </tr>
@@ -99,7 +130,8 @@
 					
 		</table>
 	</table>
-	</form>					
+	</form>	-->
+	</div>				
 	</div>
 </body>
 <footer class="footer mt-auto py-3 navbar-dark bg-dark" width=100%>
