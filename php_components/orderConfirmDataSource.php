@@ -1,5 +1,10 @@
 <?php
 
+if(isset($_SESSION['uname']))
+{
+  $uname=$_SESSION['uname'];
+}
+
 //method to get the memberId using user name from method table 
 function getMemberIdByUserName($memberName)
 {
