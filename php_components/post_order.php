@@ -21,7 +21,7 @@ if (isset($_POST['orders'])) {
             $name = $value['name'];
             $email = $value['email'];
             $address = $value['address'];
-            // $memberId .= $value['memberId'];
+            $memberId = $value['memberId'];
             $pizza = $value['pizza'];
             $baseVal = $value['base'];
             $base .= "$baseVal,";
@@ -120,6 +120,10 @@ function insertCustomer($name, $address, $memberId)
     if (!$conn) {
         echo ("Connection failed: " . mysqli_connect_error());
     }
+    if (!$memberId) {
+        echo "From insertCustomer: Member Id fail";
+    }
+
     if ($name && $address) {
         if ($query = $conn->prepare("INSERT INTO customers(`name`, `address`, memberId) VALUES(?, ?, ?);")) {
             $query->bind_param("ssi", $name, $address, $memberId);

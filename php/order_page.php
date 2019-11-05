@@ -1,8 +1,8 @@
 <?php
-  if(isset($_POST['name'])) {
-    $ingredient = $_POST['name'];
-    echo "From capture" + $POST['name'];
-  }
+//   if(isset($_POST['name'])) {
+//     $ingredient = $_POST['name'];
+//     echo "From capture" + $POST['name'];
+//   }
 //   else
 //   $ingredient = "";
 //   ?>
@@ -51,7 +51,7 @@ if(isset($_SESSION['uname']))
     </ul>
     <ul class="nav navbar-nav navbar-right">
   <?php if (isset($_SESSION['uname'])) { ?>
-   <li class="nav-link active"> your memberID:: <?=$memberId?></li>
+   <li class="nav-link active" id="memberId"><?=$memberId?></li>
      <li class="nav-link active"> Hi <?=$_SESSION['uname']?></li>
     <li class="nav-item active">
        <form method='post' action='../php_components/logOutDataSource.php' >
