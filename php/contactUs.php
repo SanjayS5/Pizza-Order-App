@@ -15,7 +15,6 @@
 </head>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<img src="../assets/img/pizzaLogo.jpg" alt="pizza" height="42" width="42">
   <a class="navbar-brand" href="#">Pizzeria Fortuna</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -82,16 +81,16 @@
 		<label for="name">Name</label> 
 		
 		
-		<input type="text" id="fname" name="user_name" placeholder="Your name.." width="48" height="148"><br/>
+		<input type="text" id="fname" name="user_name" placeholder="Enter Name" width="48" height="148"><br/>
 	
     <label for="email">Email</label>
-    <input type="text" id="lname" name="user_mail"placeholder="Your email.."><br/>
+    <input type="text" id="lname" name="user_mail"placeholder="Enter Email"><br/>
 
     <label for="phone">Phone Number</label>  
-	<input type="text" id="phone" name="user_phone" placeholder="Your phone.."><br/>   
+	<input type="text" id="phone" name="user_phone" placeholder="Enter Phone Number"><br/>   
 
     <label for="subject">Message</label>
-    <textarea id="subject" name="user_message" placeholder="Write something.." style="height:200px" cols='23'></textarea>
+    <textarea id="subject" name="user_message" placeholder="Enter Message" style="height:200px" cols='23'></textarea>
 	<br/>
 	
 	<br/>
@@ -107,15 +106,4 @@
 		</div>									
 	</div>	
 </body>
-<footer class="footer mt-auto py-3 navbar-dark bg-dark" width=100%>
-  
-    <center><I>
-        <p>Address: 5, Napoli Street, Wellington 6011</p>
-        <span>Email: pizzeriafortuna@mail.com</span>
-        <span>Phone: 1800-834-5683</span>
-        <p>&copy 2019 Pizzeria Fortuna</p>
-      </I>
-    </center></I>
-  
-</footer>
 </html>
