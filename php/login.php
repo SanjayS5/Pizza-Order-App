@@ -51,15 +51,15 @@
 <body style="background-color:black; color: white">
 	<div class="container">		
 		<div class="register">
-		<br/>	<br/>	<br/> 
-			<h1>Login</h1>
-			<br/>
+		<br/>
+			<h1>Login</h1>			
 			
 			<form class="contact-form" action="../php_components/logInDataSource.php" method="Post">
 	
 		<label for="name">Username</label> 
 		
 		
+
 		<input type="text" id="unameText1" name="uname" placeholder="Enter Username" required /><br/>
     <label for="email">Password</label>
 	<input type="password" id="pwordTxt1" name="password" placeholder="Enter Password" required maxlength="6" /><br/>
