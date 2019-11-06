@@ -153,3 +153,11 @@ input[type=email], select, textarea {
     margin: 0px 30px;
   }
 }
+
+#memberId {
+  display: none;
+}
+
+#btnlogout {
+  color: #fff;
+}
