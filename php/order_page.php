@@ -81,7 +81,7 @@ if(isset($_SESSION['uname']))
     <div class="container">
         <h1>Place Order</h1>
         <div class="space"></div>
-        <form action="../php_components/process_order.php" method="POST">
+        <form id="form" action="../php_components/process_order.php" method="POST">
 
             <div>
                 <p class="my-3"></p>

@@ -55,8 +55,6 @@ const addToOrder = (e) => {
 
     orders.push(order);
 
-    document.querySelector('form').reset();
-
     let displayOrder = document.querySelector('#display');
     const orderList = document.querySelector('#orderList');
     const li = document.createElement("li");
@@ -82,6 +80,9 @@ const addToOrder = (e) => {
     displayPrice();
 
     listItemId++;
+
+    document.querySelector('#form').reset();
+    console.log(document.querySelector('form'));
 }
 
 const displayPrice = () => {
