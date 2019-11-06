@@ -3,10 +3,6 @@ body{
     color: #fff;
 }
 
-.container {
-  margin-top: 200px;
-}
-
 .register{
     text-align: center;
     margin: 80px 0px;
@@ -14,18 +10,15 @@ body{
 }
 .register h1{
     margin: 40px 0px;
-    font-weight: bold;
 }
 .register hr{
     width: 30%;
     border: 1px solid  #fff;
-    margin: 0 auto;
-    margin-bottom: 30px;
+    margin: 20px 0px;
 }
 .registered-desc{
     width:40%;
     font-size: 15px;
-    margin: 0 auto;
 }
 .registered-btn{
     margin: 60px 0px;
@@ -34,19 +27,9 @@ body{
     width: 200px;
     margin-top: 20px;
 }
-@media only screen and (max-width: 968px) {
-    .container{
-      margin-top: 120px;
-    }
-}
 
 @media only screen and (max-width: 700px) {
     .registered-desc{
         width:60%;
-    }
-}
-@media only screen and (max-width: 514px) {
-    .container{
-      margin-top: 80px;
-    }
+    }    
 }
