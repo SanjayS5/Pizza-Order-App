@@ -32,7 +32,7 @@ if(isset($_SESSION['uname']))
     <title>Pizzeria Fortuna</title>
 </head>
 <header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <a class="navbar-brand" href="../index.php">Pizzeria Fortuna</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@ if(isset($_SESSION['uname']))
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="contactUs.php">Contact Us</a>
-      </li> 
+      </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
   <?php if (isset($_SESSION['uname'])) { ?>
@@ -78,8 +78,8 @@ if(isset($_SESSION['uname']))
 
 <body>
     <?php include "../php_components/check_ingredients.php" ?>
-    <div class="container">
-        <h1>Place Order</h1>
+    <div class="container select-top">
+        <h1 class="placeorder-title">Place Order</h1>
         <div class="space"></div>
         <form action="../php_components/process_order.php" method="POST">
 
@@ -89,7 +89,7 @@ if(isset($_SESSION['uname']))
                 <p class="my-3"></p>
             </div>
             <div class="row" id="selectPizza">
-                <div class="col-lg-3  p-0">
+                <div class="col-lg-3 col-md-6 col-sm-6  p-0">
                     <div class="card">
                         <div class="premade">
                             <img src="../assets/img/pizzaSample.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
@@ -102,7 +102,7 @@ if(isset($_SESSION['uname']))
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 p-0">
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                     <div class="card">
                         <div class="premade">
                             <img src="../assets/img/pizzaSample2.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
@@ -115,7 +115,7 @@ if(isset($_SESSION['uname']))
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 p-0">
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                     <div class="card">
                         <div class="premade">
                             <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
@@ -129,7 +129,7 @@ if(isset($_SESSION['uname']))
                     </div>
                 </div>
 
-                <div class="col-lg-3 p-0">
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                     <div class="card">
                         <div class="premade">
                             <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
@@ -150,7 +150,7 @@ if(isset($_SESSION['uname']))
                 <p class="my-3"></p>
             </div>
             <div class="row" id="selectBase">
-                <div class="col-lg-3 p-0">
+                <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                     <div class="card">
                         <div class="base">
                             <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
@@ -162,7 +162,7 @@ if(isset($_SESSION['uname']))
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 p-0">
+                <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                     <div class="card">
                         <div class="base">
                             <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
@@ -184,7 +184,7 @@ if(isset($_SESSION['uname']))
             <p class="my-3"></p>
         </div>
         <div class="row">
-            <div class="col-lg-3 p-0">
+            <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                 <div class="card">
                     <div class="toppings">
                         <img src="../assets/img/tomato.png" class="card-img-top" alt="..." height="200px" width="100%">
@@ -195,7 +195,7 @@ if(isset($_SESSION['uname']))
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 p-0">
+            <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                 <div class="card">
                     <div class="toppings">
                         <img src="../assets/img/onion.png" class="card-img-top" alt="..." height="200px" width="100%">
@@ -206,7 +206,7 @@ if(isset($_SESSION['uname']))
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 p-0">
+            <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                 <div class="card">
                     <div class="toppings">
                         <img src="../assets/img/spinach.png" class="card-img-top" alt="..." height="200px" width="100%">
@@ -217,7 +217,7 @@ if(isset($_SESSION['uname']))
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 p-0">
+            <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                 <div class="card">
                     <div class="toppings">
                         <img src="../assets/img/capsicum.png" class="card-img-top" alt="..." height="200px" width="100%">
@@ -228,7 +228,7 @@ if(isset($_SESSION['uname']))
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 p-0">
+            <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                 <div class="card">
                     <div class="toppings">
                         <img src="../assets/img/basil.png" class="card-img-top" alt="..." height="200px" width="100%">
@@ -239,7 +239,7 @@ if(isset($_SESSION['uname']))
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 p-0">
+            <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                 <div class="card">
                     <div class="toppings">
                         <img src="../assets/img/pineapple.png" class="card-img-top" alt="..." height="200px" width="100%">
@@ -250,7 +250,7 @@ if(isset($_SESSION['uname']))
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 p-0">
+            <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                 <div class="card">
                     <div class="toppings">
                         <img src="../assets/img/ham.png" class="card-img-top" alt="..." height="200px" width="100%">
@@ -268,7 +268,7 @@ if(isset($_SESSION['uname']))
         <!-- <input type="submit" name="submit" value="Place Order"> -->
 
         <!-- PAYMENTS -->
-        <div>
+        <div class="order-btn">
             <button class="btn btn-dark" id="addOrderBtn">Add to Order</button>
             <button class="btn btn-dark" id="nextBtn"> Next </button>
         </div>
@@ -276,30 +276,23 @@ if(isset($_SESSION['uname']))
         <h3>Order Details</h3>
             <ul id="orderList"></ul>
             <div id="priceDisplay">
-                <p id="priceText">Current order total: $0</p>
+              <hr>
+                <p id="priceText">Order total: $0</p>
             </div>
         </div>
         <div>
-            
+
             <tr>
                 <td>&nbsp;</td>
             </tr>
-            <style>
-                #payment {
-                    display: none;
-                    background: black;
-                    border: 1px solid yellow;
-                    width: 100%;
-                    height: 100%;
-                }
-            </style>
             <div id="payment">
 
                 <br />
                 <br />
                 <br />
                 <br />
-                <table id="paymentTable" border='0' width='550px' cellpadding='0' cellspacing='0' align='center'>
+                <!-- <table id="paymentTable" border='0' width='550px' cellpadding='0' cellspacing='0' align='center'> -->
+                <table id="paymentTable" >
                     <center>
                         <tr>
                             <td align="center">
@@ -314,7 +307,7 @@ if(isset($_SESSION['uname']))
                     </center>
                     <tr>
                         <center>
-                            <table border='0' width='250px' cellpadding='0' cellspacing='0' align='center'>
+                            <table class="payment-form" border='0' width='250px' cellpadding='0' cellspacing='0' align='center'>
                                 <tr>
                                     <td align='center' id="name_td">
                                         <strong>Name</strong>
@@ -360,16 +353,14 @@ if(isset($_SESSION['uname']))
                                 <tr>
                                     <td>&nbsp;</td>
                                 </tr>
-                                <table border='0' cellpadding='0' cellspacing='0' width='450px' align='center'>
+                                <table class="payment-btn-wrap">
                                     <tr>
                                         <td>&nbsp;</td>
                                     </tr>
 
-
-
                                     <tr>
                                         <td align='center'>
-                                            <button class="btn btn-dark" id="submitOrderBtn">Confirm Payment</button>
+                                            <button class="btn btn-dark payment-btn" id="submitOrderBtn">Confirm Payment</button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -382,12 +373,13 @@ if(isset($_SESSION['uname']))
             </div>
 
         </div>
-
-
         </form>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../js/orders.js"></script>
 </body>
 
