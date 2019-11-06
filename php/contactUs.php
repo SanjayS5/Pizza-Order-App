@@ -56,20 +56,7 @@
 <body>
 	<div class="container">
 	<br/>
-	<?php
-
-	if(isset($_POST["submit"]))
-	{
-	include('../php_components/contactDataSource.php');
-	$printMsg=store_record_into_contactTable();
-	if($printMsg==0){
-		echo "<h3>Please re-enter your details</h3>";
-	}
-	  else{
-		echo "<h3>Successfully submitted</h3>";
-
-	}
-		}?>
+	
 	
 	<h1>Contact Us</h1>
 	<hr>
@@ -98,7 +85,21 @@
 	<div class="contact-btn">
 	<button type="submit" class="btn btn-dark" id="btncontact" name='submit' value="Submit" >Submit</button>
 	</div>
-	<br/>
+  <br/>
+  <?php
+
+	if(isset($_POST["submit"]))
+	{
+	include('../php_components/contactDataSource.php');
+	$printMsg=store_record_into_contactTable();
+	if($printMsg==0){
+		echo "<h3>Please re-enter your details</h3>";
+	}
+	  else{
+		echo "<h3><center>We have received your message!</center></h3>";
+
+	}
+		}?>
 	
   </form>
   
