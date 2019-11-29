@@ -132,7 +132,7 @@ if(isset($_SESSION['uname']))
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                     <div class="card">
                         <div class="premade">
-                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
+                            <img src="../assets/img/makeYourOwn.jpg" class="card-img-top" alt="..." height="300px" width="100%">
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Make Your Own!</label>
@@ -153,7 +153,7 @@ if(isset($_SESSION['uname']))
                 <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                     <div class="card">
                         <div class="base">
-                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
+                            <img src="../assets/img/thinCrust.jpg" class="card-img-top" alt="..." height="300px" width="100%">
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Thin crust</label>
@@ -165,7 +165,7 @@ if(isset($_SESSION['uname']))
                 <div class="col-lg-3 col-md-4 col-sm-6 p-0">
                     <div class="card">
                         <div class="base">
-                            <img src="../assets/img/pizzaSample3.jpeg" class="card-img-top" alt="..." height="300px" width="100%">
+                            <img src="../assets/img/thickCrust.jpg" class="card-img-top" alt="..." height="300px" width="100%">
                         </div>
                         <div class="card-body">
                             <label for="pizzaRadioBtn">Thick crust</label>
