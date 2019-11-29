@@ -69,16 +69,16 @@ if(isset($_SESSION['uname']))
 
 		<center>
 			<div>
-				<?php
-				include('../php_components/orderConfirmDataSource.php');
-				$orderId=getOrderIdFromDB();
-				$custId=getCustomerIdByOrderId($orderId);
-				$custname=getNameByCustId($custId);
-				$base=getOrderBase($orderId);
-				$status=getOrderStatus($orderId);
-				$itemList=getItemListByOrderId($orderId);
-				
-		?>
+			<?php
+                include('../php_components/orderConfirmDataSource.php');
+                $orderId=getOrderIdFromDB();
+                $custId=getCustomerIdByOrderId($orderId);
+                $custname=getNameByCustId($custId);
+                $base=getOrderBase($orderId);
+                $status=getOrderStatus($orderId);
+                $itemList=getItemListByOrderId($orderId);
+
+        ?>
 				<br/>
 				<br/>
 					<h1>
@@ -112,7 +112,7 @@ if(isset($_SESSION['uname']))
 									</strong>
 								</td>
 							</tr>
-							<tr>
+							<!-- <tr>
 								<td align='center'>
 									<strong>Order Base </strong>
 								</td>
@@ -121,15 +121,15 @@ if(isset($_SESSION['uname']))
 										<?=$base?>
 									</strong>
 								</td>
-							</tr>
+							</tr> -->
 							<tr>
 								<td align='center'>
-									<strong>Order Toppings </strong>
+									<strong>Order</strong>
 								</td>
 								<td align='center'>
 									<strong>
 										<?php
-				 printOrderList($itemList);
+				 printOrderList($itemList, $orderId);
 				?>
 									</strong>
 								</td>

@@ -221,40 +221,70 @@ function getemailBymemberId($memberId)
 	}	
 	return $email;		
 }
+
 function getItemListByOrderId($orderId){
-	//database details
-	$dbhost = 'localhost';
-	$dbuser = 'myuser';
-	$dbpass = 'mypass';
-	$db_name =  'pizzadb';
-	//establish connection
-	$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db_name);
-	if(! $conn ) {
+    //database details
+    $dbhost = 'localhost';
+    $dbuser = 'myuser';
+    $dbpass = 'mypass';
+    $db_name =  'pizzadb';
+    //establish connection
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db_name);
+    if(! $conn ) {
             die('Could not connect: ' . mysqli_error());
       }
     else
-	{
-		//echo 'Connected successfully';				
-			$query = $conn->prepare("SELECT * FROM orders WHERE id= ?;");
-			$query->bind_param("s", $orderId);
-			$query->execute();
-			$result = $query->get_result();				
-			$row = $result->fetch_assoc();
-			//print_r($row);
-			$itemListStr=$row['toppings'];
-			if(strlen($itemListStr)!=0){				
-				$itemList= preg_split("/\,\+/",$itemListStr);
-					
-		}
-	}	
-	return $itemList;		
+    {
+            $query = $conn->prepare("SELECT * FROM orders WHERE id= ?;");
+            $query->bind_param("s", $orderId);
+            $query->execute();
+            $result = $query->get_result();
+            $row = $result->fetch_assoc();
+            // print_r($row);
+            $itemListStr=$row['toppings'];
+            if(strlen($itemListStr)!=0){
+                $items = explode(",", $itemListStr);
+                $itemList = array();
+                for($i=0;$i<count($items);$i++) {
+                    if($i == 0) {
+                        $itemStr = $items[0];
+                    }
+                    else {
+                        if(!empty($items[$i][0]) && $items[$i][0] == '+') {
+                            $itemStr .= ',' . substr($items[$i], 1);
+                        }
+                        else {
+                            $itemList[] = $itemStr;
+                            $itemStr = $items[$i];
+                        }
+                    }
+                }
+
+
+        }
+    }
+    return $itemList;
 }
-function printOrderList($itemList)
+
+function printOrderList($itemList,$orderId)
 {
-		foreach($itemList as $x){
-			echo "$x<br>";
-			// if($itemList.size)
-		}			
+        $baseList=getOrderBase($orderId);
+        $printBaseList= preg_split("/,/",$baseList);
+        $arrlength=count($printBaseList)-1;
+        $i=0;
+        foreach($itemList as $x){
+            $base=$printBaseList[$i];
+            echo "Base:  $base<br/> ";
+            $i++;
+            $strlist= preg_split("/,+/",$x);
+            echo "Pizza: ";
+            foreach($strlist as $y)
+                {
+                    $y.=",";
+                    echo "$y";
+                }
+				echo "<p>---------------------------</p>" ;
+        }
 }
 
 ?>
